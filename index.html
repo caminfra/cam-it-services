@@ -1,813 +1,825 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>camgotit | IT Services</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07090f" />
+  <meta name="description" content="camgotit IT Services — straightforward local and remote IT support in the Richland & Southwind area. Optimization, security, and backup without the noise." />
+  <title>camgotit — IT Services</title>
+  <link rel="icon" type="image/png" href="assets/cg-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --black: #07090f;
+      --navy: #0a1020;
+      --graphite: #1f2430;
+      --silver: #c0c6d2;
+      --muted: #8b93a7;
+      --blue: #0078ff;
+      --blue-2: #3aa0ff;
+      --steel: #2563eb;
+      --white: #f7f8fb;
+      --line: rgba(192, 198, 210, 0.14);
+      --glass: rgba(16, 22, 36, 0.55);
+      --radius-sm: 8px;
+      --radius: 14px;
+      --nav-h: 84px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050b16;
-      color: white;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
       overflow-x: hidden;
+      min-height: 100%;
     }
 
-    /* NAVBAR */
+    .skip {
+      position: absolute;
+      left: 12px;
+      top: -40px;
+      background: var(--blue);
+      color: #fff;
+      padding: 8px 12px;
+      z-index: 100;
+    }
+    .skip:focus { top: 12px; }
 
-    nav {
-      height: 100px;
-      width: 100%;
+    /* ===== ATMOSPHERE ===== */
+    .page-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(900px 520px at 18% 12%, rgba(10, 18, 40, 0.9), transparent 55%),
+        radial-gradient(780px 640px at 78% 28%, rgba(0, 90, 210, 0.18), transparent 58%),
+        radial-gradient(1200px 800px at 70% 110%, rgba(37, 99, 235, 0.1), transparent 50%),
+        linear-gradient(180deg, #06070c 0%, #0a1020 42%, #07090f 100%);
+    }
+
+    .page-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(0, 120, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 120, 255, 0.045) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(70% 70% at 72% 38%, #000 20%, transparent 78%);
+    }
+
+    .page-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        118deg,
+        transparent 0 18px,
+        rgba(0, 120, 255, 0.018) 18px 19px
+      );
+      mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.7) 100%);
+      pointer-events: none;
+    }
+
+    .wrap {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(7, 9, 15, 0.86), rgba(7, 9, 15, 0.42));
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .nav-inner {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 7%;
-      border-bottom: 1px solid rgba(80, 150, 255, 0.25);
-      background: rgba(5, 11, 22, 0.95);
-      position: relative;
-      z-index: 10;
+      gap: 32px;
     }
 
-    .nav-logo img {
-      width: 210px;
-      max-height: 75px;
+    .brand-logo {
+      height: 52px;
+      width: auto;
       object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(0, 120, 255, 0.18));
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 45px;
+      gap: 36px;
+      list-style: none;
     }
 
     .nav-links a {
-      color: #d8dce5;
-      text-decoration: none;
-      font-size: 17px;
+      font-size: 0.92rem;
       font-weight: 500;
-      transition: 0.2s;
+      letter-spacing: 0.02em;
+      color: var(--silver);
+      transition: color 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: #5da9ff;
-    }
+    .nav-links a:hover { color: var(--white); }
 
-    .nav-button {
-      padding: 16px 28px;
-      background: linear-gradient(135deg, #4b9cff, #174fc9);
-      border-radius: 12px;
-      color: white !important;
-      box-shadow: 0 0 25px rgba(44, 126, 255, 0.45);
-    }
-
-
-    /* HERO */
-
-    .hero {
-      min-height: 820px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .nav-end {
+      display: flex;
       align-items: center;
-      padding: 70px 7%;
-      position: relative;
-      overflow: hidden;
-
-      background:
-        radial-gradient(circle at 75% 45%, rgba(20, 100, 255, 0.18), transparent 35%),
-        linear-gradient(120deg, #050b16 0%, #07101e 55%, #0b1a2d 100%);
     }
 
-    .hero::before {
+    .nav-panel {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 18px;
+      height: 1.5px;
+      background: var(--white);
+      position: relative;
+      transition: 0.2s ease;
+    }
+    .menu-toggle span::before,
+    .menu-toggle span::after {
       content: "";
       position: absolute;
-      width: 700px;
-      height: 700px;
-      right: -200px;
-      top: 40px;
-
-      background:
-        radial-gradient(circle, rgba(30, 120, 255, 0.15), transparent 65%);
-
-      pointer-events: none;
+      left: 0;
     }
+    .menu-toggle span::before { top: -6px; }
+    .menu-toggle span::after { top: 6px; }
 
-
-    /* LEFT SIDE */
-
-    .hero-left {
-      position: relative;
-      z-index: 2;
-    }
-
-    .tag {
+    /* ===== BUTTONS ===== */
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-
-      padding: 10px 18px;
-      border: 1px solid #247dff;
-      border-radius: 30px;
-
-      color: #b8c8df;
-      font-size: 13px;
-      letter-spacing: 2px;
-      margin-bottom: 35px;
-
-      background: rgba(20, 60, 120, 0.2);
-    }
-
-    .tag-dot {
-      width: 12px;
-      height: 12px;
-      background: #298cff;
-      border-radius: 50%;
-      box-shadow: 0 0 15px #298cff;
-    }
-
-    h1 {
-      font-size: clamp(55px, 6vw, 100px);
-      line-height: 0.95;
-      margin-bottom: 30px;
-      font-weight: 800;
-      letter-spacing: -4px;
-    }
-
-    .blue-text {
-      color: #398fff;
-      text-shadow: 0 0 35px rgba(57, 143, 255, 0.25);
-    }
-
-    .hero-description {
-      font-size: 21px;
-      line-height: 1.55;
-      color: #c1cad8;
-      max-width: 650px;
-      margin-bottom: 40px;
-    }
-
-
-    /* BUTTONS */
-
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 60px;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      text-decoration: none;
-      padding: 19px 32px;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
-      transition: 0.25s;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+      white-space: nowrap;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #439cff, #1553d0);
-      color: white;
-      box-shadow: 0 0 30px rgba(40, 120, 255, 0.45);
+      background: linear-gradient(180deg, #2b8fff, var(--blue));
+      color: #fff;
+      box-shadow: 0 0 0 1px rgba(120, 190, 255, 0.25), 0 0 28px rgba(0, 120, 255, 0.38);
     }
-
     .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 40px rgba(40, 120, 255, 0.7);
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px rgba(160, 210, 255, 0.4), 0 8px 32px rgba(0, 120, 255, 0.5);
     }
 
-    .btn-secondary {
-      color: white;
-      border: 2px solid #318cff;
-      background: rgba(5, 15, 30, 0.5);
+    .btn-ghost {
+      background: rgba(8, 12, 22, 0.45);
+      color: var(--white);
+      border: 1px solid rgba(0, 120, 255, 0.55);
+    }
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      border-color: var(--blue-2);
+      box-shadow: 0 0 22px rgba(0, 120, 255, 0.18);
     }
 
-    .btn-secondary:hover {
-      background: rgba(30, 100, 200, 0.2);
+    .btn-nav { padding: 11px 18px; font-size: 0.88rem; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: calc(100svh - var(--nav-h));
+      display: grid;
+      place-items: center;
+      padding: 28px 0 72px;
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 24px 40px;
+      align-items: center;
+      width: min(1200px, calc(100% - 48px));
+    }
 
-    /* FEATURES */
+    .hero-copy { position: relative; z-index: 2; max-width: 640px; }
 
-    .quick-features {
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px 7px 12px;
+      border: 1px solid rgba(0, 120, 255, 0.28);
+      background: rgba(0, 120, 255, 0.06);
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--silver);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 10px var(--blue);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(0.85); }
+    }
+
+    .headline {
+      font-family: "Exo 2", sans-serif;
+      font-weight: 800;
+      font-size: clamp(3.1rem, 6.4vw, 6.15rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      margin-bottom: 22px;
+    }
+
+    .grad {
+      background: linear-gradient(90deg, #5eb4ff 0%, #0078ff 48%, #3aa0ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lede {
+      color: var(--silver);
+      font-size: 1.06rem;
+      max-width: 34rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
       display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 42px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 0;
-      border-top: 1px solid rgba(50, 130, 255, 0.35);
-      padding-top: 25px;
+      max-width: 560px;
     }
 
     .feature {
-      display: flex;
-      gap: 15px;
-      padding-right: 25px;
-      margin-right: 25px;
-      border-right: 1px solid rgba(255,255,255,0.12);
+      padding: 0 18px;
+      border-left: 1px solid var(--line);
+    }
+    .feature:first-child { padding-left: 0; border-left: 0; }
+
+    .feature svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--blue);
+      fill: none;
+      stroke-width: 1.7;
+      margin-bottom: 10px;
     }
 
-    .feature:last-child {
-      border-right: none;
+    .feature strong {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 3px;
     }
 
-    .feature-icon {
-      font-size: 30px;
-      color: #398fff;
+    .feature span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--muted);
     }
 
-    .feature h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .feature p {
-      color: #8792a4;
-      font-size: 13px;
-    }
-
-
-    /* RIGHT SIDE */
-
-    .hero-right {
+    /* ===== HERO VISUAL ===== */
+    .hero-visual {
       position: relative;
-      height: 650px;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
 
+    .atm-glow,
+    .atm-smoke,
+    .atm-streaks,
+    .atm-dots {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .atm-glow {
+      width: 78%;
+      height: 78%;
+      top: 4%;
+      left: 11%;
+      background: radial-gradient(circle at 50% 46%, rgba(0, 120, 255, 0.38), rgba(37, 99, 235, 0.08) 42%, transparent 70%);
+      filter: blur(8px);
+      z-index: 0;
+    }
+
+    .atm-smoke {
+      inset: 8% 4% 18% 4%;
+      background:
+        radial-gradient(ellipse at 30% 70%, rgba(160, 190, 255, 0.08), transparent 50%),
+        radial-gradient(ellipse at 70% 30%, rgba(0, 120, 255, 0.12), transparent 46%);
+      filter: blur(28px);
+      z-index: 0;
+    }
+
+    .atm-dots {
+      inset: 0;
+      opacity: 0.45;
+      background-image: radial-gradient(rgba(0, 180, 255, 0.45) 1px, transparent 1.2px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(circle at 52% 42%, #000 18%, transparent 62%);
+      z-index: 0;
+    }
+
+    .atm-streaks {
+      inset: -10% -20%;
+      z-index: 1;
+      background:
+        linear-gradient(118deg, transparent 42%, rgba(90, 190, 255, 0.09) 46%, transparent 50%),
+        linear-gradient(128deg, transparent 56%, rgba(0, 120, 255, 0.07) 59%, transparent 63%);
+      mix-blend-mode: screen;
+    }
+
+    .cg-emblem {
+      position: relative;
+      z-index: 2;
+      width: 62%;
+      max-width: 520px;
+      height: auto;
+      filter:
+        drop-shadow(0 0 28px rgba(0, 120, 255, 0.32))
+        drop-shadow(0 28px 50px rgba(0, 0, 0, 0.55));
+      animation: floaty 7s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero-lockup {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      margin-top: -6px;
+    }
+
+    .wordmark {
+      font-family: "Exo 2", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 2.4vw, 2.15rem);
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+    }
+
+    .wordmark .got { color: var(--blue); }
+    .wordmark .cam,
+    .wordmark .it { color: #e8edf5; }
+
+    .services-line {
+      margin-top: 10px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-
-      z-index: 2;
+      gap: 14px;
+      color: var(--silver);
+      font-size: 0.72rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
-    .hero-glow {
-      position: absolute;
-
-      width: 550px;
-      height: 550px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(50, 130, 255, 0.3);
-
-      box-shadow:
-        0 0 60px rgba(30, 110, 255, 0.15),
-        inset 0 0 60px rgba(30, 110, 255, 0.08);
-    }
-
-    .cg-logo {
-      width: min(600px, 95%);
-      position: relative;
-      z-index: 2;
-
-      filter:
-        drop-shadow(0 0 15px rgba(70, 140, 255, 0.5))
-        drop-shadow(0 0 45px rgba(20, 80, 255, 0.25));
-
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-
-      0%, 100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-15px);
-      }
-
-    }
-
-    .brand-name {
-      position: relative;
-      z-index: 3;
-
-      margin-top: -30px;
-
-      font-size: clamp(55px, 6vw, 95px);
-      font-weight: 800;
-      letter-spacing: -3px;
-
-      color: #e9edf5;
-    }
-
-    .brand-name span {
-      color: #398fff;
-    }
-
-    .brand-services {
-      position: relative;
-      z-index: 3;
-
-      margin-top: 8px;
-
-      font-size: 15px;
-      letter-spacing: 10px;
-
-      color: #b7c2d4;
-
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand-services::before,
-    .brand-services::after {
-
+    .services-line::before,
+    .services-line::after {
       content: "";
-
-      width: 80px;
-      height: 2px;
-
-      background: #287ee8;
+      width: 52px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
     }
 
+    /* ===== SECTIONS ===== */
+    section { padding: 92px 0; position: relative; }
 
-    /* SERVICES SECTION */
-
-    .services {
-      padding: 100px 7%;
-      background: #07101c;
-    }
-
-    .section-title {
+    .section-head {
       text-align: center;
-      margin-bottom: 60px;
+      max-width: 640px;
+      margin: 0 auto 56px;
     }
 
-    .section-title h2 {
-      font-size: 48px;
-      margin-bottom: 15px;
+    .kicker {
+      color: var(--blue);
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 14px;
     }
 
-    .section-title p {
-      color: #aab5c6;
-      font-size: 18px;
+    h2 {
+      font-family: "Exo 2", sans-serif;
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      font-weight: 800;
     }
 
-    .service-grid {
+    .section-head p {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      max-width: 1200px;
-      margin: auto;
+      gap: 18px;
     }
 
-    .service-card {
-      background: linear-gradient(
-        145deg,
-        rgba(15, 30, 50, 0.9),
-        rgba(5, 12, 22, 0.9)
-      );
-
-      border: 1px solid rgba(60, 140, 255, 0.25);
-
-      padding: 35px;
-      border-radius: 18px;
-
-      transition: 0.3s;
-    }
-
-    .service-card:hover {
-
-      transform: translateY(-8px);
-
-      border-color: #398fff;
-
-      box-shadow:
-        0 15px 50px rgba(0, 80, 255, 0.15);
-    }
-
-    .service-card h3 {
-      font-size: 23px;
-      margin-bottom: 15px;
-      color: #fff;
-    }
-
-    .service-card p {
-      color: #aab5c6;
-      line-height: 1.6;
-    }
-
-
-    /* CONTACT */
-
-    .contact {
-      padding: 100px 7%;
-      text-align: center;
-
+    .card {
+      position: relative;
+      padding: 28px 24px 26px;
       background:
-        radial-gradient(circle at center, rgba(25, 100, 255, 0.15), transparent 50%),
-        #050b16;
+        linear-gradient(180deg, rgba(36, 44, 64, 0.35), rgba(12, 16, 28, 0.72));
+      border: 1px solid rgba(192, 198, 210, 0.1);
+      border-radius: 16px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      overflow: hidden;
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
     }
 
-    .contact h2 {
-      font-size: 50px;
-      margin-bottom: 20px;
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(0,120,255,0.08), transparent 40%);
+      opacity: 0.5;
+      pointer-events: none;
     }
 
-    .contact p {
-      color: #b5c0d0;
-      font-size: 19px;
-      margin-bottom: 35px;
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 120, 255, 0.55);
+      box-shadow: 0 0 0 1px rgba(0, 120, 255, 0.12), 0 18px 40px rgba(0, 40, 90, 0.35), 0 0 32px rgba(0, 120, 255, 0.16);
     }
 
+    .card-num {
+      font-family: "Exo 2", sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
 
-    /* MOBILE */
+    .card h3 {
+      font-family: "Exo 2", sans-serif;
+      font-size: 1.22rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
 
-    @media (max-width: 900px) {
+    .card p { color: var(--muted); font-size: 0.94rem; }
 
-      nav {
-        padding: 0 5%;
-      }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px 40px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 36px 0;
+    }
 
-      .nav-links {
-        gap: 15px;
-      }
+    .why-item h3 {
+      font-family: "Exo 2", sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
 
-      .nav-links a:not(.nav-button) {
-        display: none;
-      }
+    .why-item p { color: var(--muted); font-size: 0.95rem; }
 
-      .hero {
+    /* ===== CTA ===== */
+    .cta {
+      padding-bottom: 120px;
+    }
+
+    .cta-panel {
+      text-align: center;
+      padding: 72px 24px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(0,120,255,0.18);
+      border-bottom: 1px solid rgba(0,120,255,0.18);
+      background:
+        radial-gradient(600px 180px at 50% 0%, rgba(0,120,255,0.18), transparent 70%),
+        linear-gradient(180deg, rgba(10,16,32,0.4), rgba(7,9,15,0.2));
+    }
+
+    .cta-panel h2 { margin-bottom: 14px; }
+    .cta-panel p {
+      color: var(--silver);
+      max-width: 34rem;
+      margin: 0 auto 28px;
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 980px) {
+      .hero-grid {
         grid-template-columns: 1fr;
-        text-align: center;
-        padding: 70px 7%;
+        gap: 12px;
       }
-
-      .hero-left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .hero-visual {
+        min-height: 460px;
+        order: 2;
       }
+      .hero-copy { order: 1; max-width: none; }
+      .cg-emblem { width: 58%; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; gap: 22px; }
+      .features { max-width: none; }
+    }
 
-      .hero-right {
-        height: 500px;
-        margin-top: 30px;
+    @media (max-width: 760px) {
+      .wrap, .nav-inner, .hero-grid, footer { width: min(1200px, calc(100% - 28px)); }
+      .menu-toggle { display: grid; }
+      .nav-end { position: relative; }
+      .nav-panel {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: calc(100% + 10px);
+        min-width: 230px;
+        padding: 16px;
+        background: rgba(10, 14, 24, 0.96);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.45);
       }
-
-      .quick-features {
+      .nav-panel.open { display: block; }
+      .nav-links {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 14px;
       }
-
-      .feature {
-        border-right: none;
-        margin-bottom: 20px;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .btn-nav { width: 100%; }
+      .cards { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; gap: 18px; }
+      .feature { border-left: 0; padding: 0; border-top: 1px solid var(--line); padding-top: 16px; }
+      .feature:first-child { border-top: 0; padding-top: 0; }
+      .headline { font-size: clamp(2.6rem, 12vw, 4.2rem); }
+      .hero { padding-top: 18px; }
+      .cg-emblem { width: 72%; }
+      .hero-visual { min-height: 400px; }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .cg-emblem, .pill-dot { animation: none; }
+      .card, .btn { transition: none; }
+    }
   </style>
 </head>
-
-
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page-bg" aria-hidden="true"></div>
 
-
-<!-- NAVIGATION -->
-
-<nav>
-
-  <div class="nav-logo">
-    <img src="assets/logo.png" alt="camgotit IT Services">
-  </div>
-
-
-  <div class="nav-links">
-
-    <a href="#services">Services</a>
-
-    <a href="#why">Why Me?</a>
-
-    <a href="#contact">Contact</a>
-
-    <a
-      class="nav-button"
-      href="mailto:csims4039@gmail.com"
-    >
-      Get IT Help →
-    </a>
-
-  </div>
-
-</nav>
-
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-
-  <!-- LEFT -->
-
-  <div class="hero-left">
-
-    <div class="tag">
-
-      <div class="tag-dot"></div>
-
-      IT SUPPORT • OPTIMIZATION • SECURITY
-
-    </div>
-
-
-    <h1>
-
-      Technology<br>
-
-      Made <span class="blue-text">Simple.</span>
-
-    </h1>
-
-
-    <p class="hero-description">
-
-      Straightforward IT support to optimize your devices,
-      strengthen security, back up what matters, and remove
-      what you don't need.
-
-    </p>
-
-
-    <div class="hero-buttons">
-
-      <a
-        href="mailto:csims4039@gmail.com?subject=IT Support Request"
-        class="btn-primary"
-      >
-        Get IT Help →
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" aria-label="camgotit home">
+        <img class="brand-logo" src="assets/logo.png" alt="camgotit IT Services" />
       </a>
 
-
-      <a
-        href="#services"
-        class="btn-secondary"
-      >
-        View Services →
-      </a>
-
+      <div class="nav-end">
+        <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu">
+          <span></span>
+        </button>
+        <nav class="nav-panel" id="navPanel">
+          <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why camgotit?</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a class="btn btn-primary btn-nav" href="#contact">Get IT Help</a>
+        </nav>
+      </div>
     </div>
+  </header>
 
-
-
-    <div class="quick-features">
-
-
-      <div class="feature">
-
-        <div class="feature-icon">⌖</div>
-
-        <div>
-
-          <h3>Richland & Southwind Area</h3>
-
-          <p>Local Support</p>
-
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="pill"><span class="pill-dot"></span> IT Support • Optimization • Security</div>
+          <h1 class="headline">Technology<br />Made <span class="grad">Simple.</span></h1>
+          <p class="lede">Straightforward IT support to optimize your devices, strengthen security, back up what matters, and remove what you don’t need.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get IT Help →</a>
+            <a class="btn btn-ghost" href="#services">View Services →</a>
+          </div>
+          <div class="features">
+            <div class="feature">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+              <strong>Richland &amp; Southwind Area</strong>
+              <span>Local Support</span>
+            </div>
+            <div class="feature">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>
+              <strong>Remote &amp; Local Support</strong>
+              <span>Get Help Anywhere</span>
+            </div>
+            <div class="feature">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6.2v5.3c0 4.3 2.9 8.2 7 9.5 4.1-1.3 7-5.2 7-9.5V6.2L12 3z"/></svg>
+              <strong>Security Focused</strong>
+              <span>Protect What Matters</span>
+            </div>
+          </div>
         </div>
 
-      </div>
-
-
-
-      <div class="feature">
-
-        <div class="feature-icon">▣</div>
-
-        <div>
-
-          <h3>Remote & Local Support</h3>
-
-          <p>Get Help Anywhere</p>
-
+        <div class="hero-visual" aria-hidden="true">
+          <div class="atm-dots"></div>
+          <div class="atm-smoke"></div>
+          <div class="atm-glow"></div>
+          <div class="atm-streaks"></div>
+          <img class="cg-emblem" src="assets/cg-logo.png" alt="" />
+          <div class="hero-lockup">
+            <p class="wordmark"><span class="cam">cam</span><span class="got">got</span><span class="it">it</span></p>
+            <p class="services-line">IT Services</p>
+          </div>
         </div>
-
       </div>
+    </section>
 
-
-
-      <div class="feature">
-
-        <div class="feature-icon">♢</div>
-
-        <div>
-
-          <h3>Security Focused</h3>
-
-          <p>Protect What Matters</p>
-
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Services</div>
+          <h2>How I Can Help</h2>
+          <p>Simple, practical technology support without unnecessary subscriptions.</p>
         </div>
-
+        <div class="cards">
+          <article class="card">
+            <div class="card-num">01</div>
+            <h3>PC Optimization</h3>
+            <p>Speed up computers, remove unnecessary software, reduce startup programs, and improve performance.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">02</div>
+            <h3>Security Setup</h3>
+            <p>Help configure Windows security, safer browser settings, updates, and account protection.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">03</div>
+            <h3>File Backup</h3>
+            <p>Help protect important photos, documents, and files with reliable backup solutions.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">04</div>
+            <h3>Remote Support</h3>
+            <p>Provide remote assistance for software problems and configuration issues when possible.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">05</div>
+            <h3>New Device Setup</h3>
+            <p>Help set up new computers, software, printers, accounts, and essential settings.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">06</div>
+            <h3>Pop-Up &amp; Ad Cleanup</h3>
+            <p>Help remove unwanted browser extensions, annoying notifications, and unnecessary software.</p>
+          </article>
+        </div>
       </div>
-
-
-    </div>
-
-
-  </div>
-
-
-
-  <!-- RIGHT -->
-
-  <div class="hero-right">
-
-    <div class="hero-glow"></div>
-
-
-    <img
-      src="assets/cg-logo.png"
-      alt="camgotit CG logo"
-      class="cg-logo"
-    >
-
-
-    <div class="brand-name">
-
-      cam<span>got</span>it
-
-    </div>
-
-
-    <div class="brand-services">
-
-      IT SERVICES
-
-    </div>
-
-
-  </div>
-
-
-</section>
-
-
-
-<!-- SERVICES -->
-
-<section class="services" id="services">
-
-
-  <div class="section-title">
-
-    <h2>How I Can Help</h2>
-
-    <p>
-      Simple, practical technology support without unnecessary subscriptions.
-    </p>
-
-  </div>
-
-
-
-  <div class="service-grid">
-
-
-    <div class="service-card">
-
-      <h3>⚡ PC Optimization</h3>
-
-      <p>
-        Speed up your computer, remove unnecessary software,
-        clean up startup programs, and improve performance.
-      </p>
-
-    </div>
-
-
-
-    <div class="service-card">
-
-      <h3>🛡 Security Setup</h3>
-
-      <p>
-        Help strengthen Windows security, browser protection,
-        updates, and safer account settings.
-      </p>
-
-    </div>
-
-
-
-    <div class="service-card">
-
-      <h3>☁ File Backup</h3>
-
-      <p>
-        Set up reliable backups for important photos,
-        documents, and files.
-      </p>
-
-    </div>
-
-
-
-    <div class="service-card">
-
-      <h3>🖥 Remote Support</h3>
-
-      <p>
-        Get help remotely for many software and configuration
-        problems without leaving home.
-      </p>
-
-    </div>
-
-
-
-    <div class="service-card">
-
-      <h3>🔧 Device Setup</h3>
-
-      <p>
-        New computer setup, software installation,
-        account setup, printers, and general configuration.
-      </p>
-
-    </div>
-
-
-
-    <div class="service-card">
-
-      <h3>📢 Ad & Pop-Up Cleanup</h3>
-
-      <p>
-        Help remove unwanted programs, browser extensions,
-        pop-ups, and annoying notifications.
-      </p>
-
-    </div>
-
-
-  </div>
-
-
-</section>
-
-
-
-<!-- WHY ME -->
-
-<section class="services" id="why">
-
-  <div class="section-title">
-
-    <h2>Why camgotit?</h2>
-
-    <p>
-
-      You shouldn't have to pay monthly subscriptions just
-      to keep your computer running properly.
-
-    </p>
-
-  </div>
-
-</section>
-
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-  <h2>Need IT Help?</h2>
-
-  <p>
-
-    Tell me what's going on with your computer or device
-    and I'll help you figure out the next step.
-
-  </p>
-
-
-  <a
-    href="mailto:csims4039@gmail.com?subject=camgotit IT Support Request"
-    class="btn-primary"
-  >
-
-    Contact Me →
-
-  </a>
-
-
-</section>
-
-
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Approach</div>
+          <h2>Why camgotit?</h2>
+          <p>Premium-feeling support with a practical local shop mindset — no upsell theater, no mystery retainers.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-item">
+            <h3>Reliable</h3>
+            <p>Clear next steps, honest timelines, and work that actually finishes. You know what changed and why.</p>
+          </div>
+          <div class="why-item">
+            <h3>Secure</h3>
+            <p>Hardening comes first: updates, accounts, backups, and safer defaults before anything flashy.</p>
+          </div>
+          <div class="why-item">
+            <h3>Efficient</h3>
+            <p>Fix the machine in front of you. Strip the junk. Leave it faster, quieter, and easier to live with.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-panel">
+        <div class="kicker">Contact</div>
+        <h2>Need IT Help?</h2>
+        <p>Tell me what’s going on with your computer or device and I'll help you figure out the next step.</p>
+        <a class="btn btn-primary" href="mailto:csims4039@gmail.com?subject=camgotit IT Support Request">Contact Me →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="y"></span> camgotit IT Services</span>
+    <a href="mailto:csims4039@gmail.com?subject=camgotit IT Support Request">csims4039@gmail.com</a>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("menuBtn");
+    const panel = document.getElementById("navPanel");
+    const mq = window.matchMedia("(max-width: 760px)");
+
+    function setMobile(on) {
+      if (on) {
+        panel.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    }
+    mq.addEventListener("change", (e) => setMobile(e.matches));
+
+    btn.addEventListener("click", () => {
+      const open = panel.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+
+    panel.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (mq.matches) {
+          panel.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
