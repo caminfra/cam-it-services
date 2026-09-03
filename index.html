@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cam IT Services | Fast. Secure. Optimized.</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: white;
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(7, 17, 31, 0.95);
+      border-bottom: 1px solid #1d3557;
+      position: sticky;
+      top: 0;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #4da3ff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: #4da3ff;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        radial-gradient(circle at top right, #123d6b, transparent 40%),
+        radial-gradient(circle at bottom left, #0d2a4a, transparent 40%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 80px);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: #4da3ff;
+    }
+
+    .tagline {
+      font-size: 24px;
+      color: #9ecbff;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #d6e5f5;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .buttons {
+      margin-top: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .primary {
+      background: #2583e8;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #4da3ff;
+      transform: translateY(-2px);
+    }
+
+    .secondary {
+      border: 2px solid #4da3ff;
+      color: white;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #9fb3c8;
+    }
+
+    .services {
+      background: #0a1726;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #101f31;
+      border: 1px solid #1e3853;
+      padding: 30px;
+      border-radius: 12px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #4da3ff;
+    }
+
+    .card .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card p {
+      color: #aebfd0;
+    }
+
+    .why {
+      text-align: center;
+      background:
+        linear-gradient(135deg, #0b1c30, #102f52);
+    }
+
+    .why p {
+      max-width: 800px;
+      margin: auto;
+      color: #c9d9e8;
+      font-size: 18px;
+    }
+
+    .contact {
+      text-align: center;
+      background: #07111f;
+    }
+
+    .contact h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: #aebfd0;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #050b14;
+      color: #718096;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 18px 5%;
+      }
+
+      nav .links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">💻 CAM IT SERVICES</div>
+
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#about">Why Me?</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Fast. Secure. <span>Optimized.</span>
+      </h1>
+
+      <div class="tagline">
+        Straightforward IT support without unnecessary subscriptions.
+      </div>
+
+      <p>
+        Is your computer running slow? Paying for software you don't
+        really need? I help individuals and small businesses optimize,
+        secure, and maintain their technology.
+      </p>
+
+      <div class="buttons">
+        <a href="#contact" class="btn primary">
+          Get IT Help
+        </a>
+
+        <a href="#services" class="btn secondary">
+          View Services
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="services" id="services">
+
+    <div class="section-title">
+
+      <h2>IT Services</h2>
+
+      <p>
+        Helping you get the most out of your computer and technology.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="icon">⚡</div>
+
+        <h3>PC Optimization</h3>
+
+        <p>
+          Clean up unnecessary software, improve startup performance,
+          free up storage, and help your computer run more efficiently.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🛡️</div>
+
+        <h3>Security Setup</h3>
+
+        <p>
+          Improve your Windows security settings and help protect your
+          computer from unwanted software and common threats.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">💾</div>
+
+        <h3>File Backup Setup</h3>
+
+        <p>
+          Help protect important photos, documents, and files with a
+          reliable backup solution.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🔧</div>
+
+        <h3>Troubleshooting</h3>
+
+        <p>
+          Help diagnosing common computer issues, software problems,
+          updates, drivers, and performance concerns.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🖥️</div>
+
+        <h3>New Computer Setup</h3>
+
+        <p>
+          Get your new computer set up properly from day one, including
+          updates, security, software, and basic configuration.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🌐</div>
+
+        <h3>Remote Support</h3>
+
+        <p>
+          Many issues can be diagnosed and resolved remotely without
+          you needing to leave your home.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="why" id="about">
+
+    <div class="section-title">
+
+      <h2>Stop Paying for Software You Don't Need</h2>
+
+    </div>
+
+    <p>
+      You don't always need multiple subscriptions, PC cleaners,
+      registry cleaners, or third-party driver updater programs just
+      to keep your computer running properly.
+      <br><br>
+      I help you understand what your computer actually needs and use
+      trusted tools and security practices to keep it running smoothly.
+    </p>
+
+  </section>
+
+
+  <section class="contact" id="contact">
+
+    <h2>Need IT Help?</h2>
+
+    <p>
+      Send me a message through Nextdoor to discuss your computer issue
+      and see how I can help.
+    </p>
+
+    <a href="#" class="btn primary">
+      Message Me on Nextdoor
+    </a>
+
+  </section>
+
+
+  <footer>
+
+    <p>
+      © 2026 Cam IT Services • Fast. Secure. Optimized.
+    </p>
+
+  </footer>
+
+</body>
+</html>
