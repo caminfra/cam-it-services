@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Cam IT Services | Fast. Secure. Optimized.</title>
+  <title>camgotit | Technology Made Simple</title>
 
   <style>
     * {
@@ -19,37 +19,69 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #07111f;
-      color: white;
+      background: #08111f;
+      color: #f5f7fa;
       line-height: 1.6;
     }
 
+    /* NAVIGATION */
+
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 8%;
-      background: rgba(7, 17, 31, 0.95);
-      border-bottom: 1px solid #1d3557;
-      position: sticky;
-      top: 0;
+      padding: 14px 8%;
+      background: rgba(8, 17, 31, 0.96);
+      border-bottom: 1px solid #1e3550;
+      backdrop-filter: blur(10px);
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      color: #4da3ff;
-    }
-
-    nav a {
-      color: white;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       text-decoration: none;
-      margin-left: 20px;
+      color: white;
     }
 
-    nav a:hover {
-      color: #4da3ff;
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
     }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      text-transform: lowercase;
+    }
+
+    .brand-name span {
+      color: #5aa9ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d7e0eb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #5aa9ff;
+    }
+
+    /* HERO */
 
     .hero {
       min-height: 85vh;
@@ -57,172 +89,270 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 60px 20px;
+      padding: 70px 8%;
       background:
-        radial-gradient(circle at top right, #123d6b, transparent 40%),
-        radial-gradient(circle at bottom left, #0d2a4a, transparent 40%);
+        radial-gradient(circle at top right, #17385f 0%, transparent 40%),
+        radial-gradient(circle at bottom left, #102b49 0%, transparent 40%);
     }
 
     .hero-content {
-      max-width: 850px;
+      max-width: 900px;
+    }
+
+    .hero-logo {
+      width: 180px;
+      max-width: 55vw;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 15px 30px rgba(0,0,0,.45));
     }
 
     .hero h1 {
-      font-size: clamp(42px, 8vw, 80px);
-      margin-bottom: 10px;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 1;
+      margin-bottom: 25px;
+      letter-spacing: -4px;
+      text-transform: lowercase;
     }
 
     .hero h1 span {
-      color: #4da3ff;
+      color: #5aa9ff;
     }
 
-    .tagline {
-      font-size: 24px;
-      color: #9ecbff;
+    .hero h2 {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: #a9c8ec;
       margin-bottom: 25px;
     }
 
     .hero p {
-      font-size: 18px;
-      color: #d6e5f5;
       max-width: 700px;
       margin: auto;
+      font-size: 1.15rem;
+      color: #c8d2df;
     }
 
-    .buttons {
+    .hero-buttons {
       margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
       padding: 15px 25px;
-      margin: 8px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.2s;
+      transition: 0.25s;
     }
 
-    .primary {
-      background: #2583e8;
+    .btn-primary {
+      background: #3f8fe5;
+      color: white;
+      box-shadow: 0 10px 30px rgba(63,143,229,.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #5aa9ff;
+    }
+
+    .btn-secondary {
+      border: 2px solid #3f8fe5;
       color: white;
     }
 
-    .primary:hover {
-      background: #4da3ff;
-      transform: translateY(-2px);
+    .btn-secondary:hover {
+      background: #16304e;
     }
 
-    .secondary {
-      border: 2px solid #4da3ff;
-      color: white;
-    }
+    /* SECTIONS */
 
     section {
-      padding: 80px 8%;
+      padding: 90px 8%;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 15px;
+      font-size: 2.5rem;
     }
 
-    .section-title h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
+    .section-subtitle {
+      text-align: center;
+      color: #9fb0c4;
+      max-width: 700px;
+      margin: 0 auto 50px;
     }
 
-    .section-title p {
-      color: #9fb3c8;
-    }
+    /* SERVICES */
 
-    .services {
-      background: #0a1726;
-    }
-
-    .grid {
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .card {
-      background: #101f31;
-      border: 1px solid #1e3853;
+      background: #0d1a2b;
+      border: 1px solid #1c3552;
+      border-radius: 16px;
       padding: 30px;
-      border-radius: 12px;
-      transition: 0.2s;
+      transition: 0.25s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #4da3ff;
+      transform: translateY(-6px);
+      border-color: #4d9cf0;
+      box-shadow: 0 15px 40px rgba(0,0,0,.25);
     }
 
-    .card .icon {
-      font-size: 38px;
+    .card-icon {
+      font-size: 2.2rem;
       margin-bottom: 15px;
     }
 
     .card h3 {
-      margin-bottom: 10px;
-      color: #ffffff;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
     }
 
     .card p {
-      color: #aebfd0;
+      color: #aebdcd;
     }
+
+    /* WHY */
 
     .why {
-      text-align: center;
-      background:
-        linear-gradient(135deg, #0b1c30, #102f52);
+      background: #0b1625;
     }
 
-    .why p {
-      max-width: 800px;
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
       margin: auto;
-      color: #c9d9e8;
-      font-size: 18px;
     }
+
+    .why-item {
+      text-align: center;
+    }
+
+    .why-item h3 {
+      color: #5aa9ff;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .why-item p {
+      color: #b7c4d3;
+    }
+
+    /* SERVICE AREA */
+
+    .area {
+      text-align: center;
+    }
+
+    .area-box {
+      max-width: 800px;
+      margin: 35px auto 0;
+      padding: 35px;
+      background: linear-gradient(135deg, #102b49, #0c1828);
+      border: 1px solid #24517e;
+      border-radius: 18px;
+    }
+
+    .area-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .area-box p {
+      color: #b7cbe0;
+    }
+
+    /* CONTACT */
 
     .contact {
+      background: #0b1625;
+    }
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
       text-align: center;
-      background: #07111f;
+      background: #0d1a2b;
+      border: 1px solid #1c3552;
+      padding: 50px 30px;
+      border-radius: 18px;
     }
 
-    .contact h2 {
-      font-size: 42px;
+    .contact-box h2 {
       margin-bottom: 15px;
+      font-size: 2.3rem;
     }
 
-    .contact p {
-      color: #aebfd0;
-      margin-bottom: 30px;
+    .contact-box p {
+      color: #b5c2d0;
+      margin-bottom: 25px;
     }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 1.2rem;
+      color: #6fb5ff;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
-      padding: 25px;
-      background: #050b14;
-      color: #718096;
+      padding: 30px;
+      color: #708198;
+      border-top: 1px solid #16283d;
     }
 
-    @media (max-width: 600px) {
+    footer strong {
+      color: #dbe7f5;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
       nav {
-        padding: 18px 5%;
+        padding: 12px 5%;
       }
 
-      nav .links {
-        display: none;
+      .nav-links {
+        gap: 14px;
+        font-size: 0.9rem;
       }
 
-      .hero {
-        min-height: 75vh;
+      .brand-name {
+        font-size: 1.2rem;
+      }
+
+      .brand img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
       }
 
       section {
-        padding: 60px 6%;
+        padding: 70px 6%;
       }
     }
   </style>
@@ -230,43 +360,56 @@
 
 <body>
 
-  <nav>
-    <div class="logo">💻 CAM IT SERVICES</div>
+  <!-- NAVIGATION -->
 
-    <div class="links">
-      <a href="#services">Services</a>
-      <a href="#about">Why Me?</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <nav>
+
+    <a href="#home" class="brand">
+      <img src="assets/logo.png" alt="camgotit logo">
+      <div class="brand-name">cam<span>got</span>it</div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Me?</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
   </nav>
 
 
-  <section class="hero">
+  <!-- HERO -->
+
+  <section class="hero" id="home">
 
     <div class="hero-content">
 
-      <h1>
-        Fast. Secure. <span>Optimized.</span>
-      </h1>
+      <img
+        src="assets/logo.png"
+        alt="camgotit CG logo"
+        class="hero-logo"
+      >
 
-      <div class="tagline">
-        Straightforward IT support without unnecessary subscriptions.
-      </div>
+      <h1>cam<span>got</span>it.</h1>
+
+      <h2>Technology Made Simple.</h2>
 
       <p>
-        Is your computer running slow? Paying for software you don't
-        really need? I help individuals and small businesses optimize,
-        secure, and maintain their technology.
+        Is your computer running slow? Paying for software you may not need?
+        I provide straightforward technology support to help optimize, secure,
+        and maintain your devices.
       </p>
 
-      <div class="buttons">
-        <a href="#contact" class="btn primary">
+      <div class="hero-buttons">
+
+        <a href="#contact" class="btn btn-primary">
           Get IT Help
         </a>
 
-        <a href="#services" class="btn secondary">
+        <a href="#services" class="btn btn-secondary">
           View Services
         </a>
+
       </div>
 
     </div>
@@ -274,149 +417,183 @@
   </section>
 
 
-  <section class="services" id="services">
+  <!-- SERVICES -->
 
-    <div class="section-title">
+  <section id="services">
 
-      <h2>IT Services</h2>
+    <h2 class="section-title">How I Can Help</h2>
+
+    <p class="section-subtitle">
+      Straightforward technology support without unnecessary software
+      subscriptions or confusing technical jargon.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Computer Optimization</h3>
+        <p>
+          Help improve computer performance, remove unnecessary programs,
+          clean up startup processes, and make sure your system is running efficiently.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Security Hardening</h3>
+        <p>
+          Improve your device security with updates, safer settings,
+          account protection, and practical security recommendations.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💾</div>
+        <h3>Backup Setup</h3>
+        <p>
+          Help protect important photos, documents, and files by setting up
+          simple and reliable backup solutions.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <h3>Software Cleanup</h3>
+        <p>
+          Identify unnecessary software and subscriptions so you're not
+          paying for programs your computer doesn't actually need.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <h3>Remote Support</h3>
+        <p>
+          When appropriate, I can provide remote assistance to troubleshoot
+          and resolve certain computer issues without needing an in-person visit.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3>Local Technology Help</h3>
+        <p>
+          Local support for computer setup, troubleshooting, optimization,
+          and general technology assistance.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY CAMGOTIT -->
+
+  <section class="why" id="why">
+
+    <h2 class="section-title">Why camgotit?</h2>
+
+    <p class="section-subtitle">
+      Technology help should be understandable, honest, and focused on
+      what actually solves the problem.
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why-item">
+        <h3>No Unnecessary Software</h3>
+        <p>
+          I focus on practical solutions instead of automatically recommending
+          expensive subscriptions or third-party cleanup programs.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <h3>Simple Explanations</h3>
+        <p>
+          You'll understand what is being done to your device and why it matters.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <h3>Security Focused</h3>
+        <p>
+          Performance is important, but protecting your accounts, files,
+          and devices matters too.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICE AREA -->
+
+  <section class="area">
+
+    <h2 class="section-title">Local & Remote Support</h2>
+
+    <div class="area-box">
+
+      <h3>📍 Serving the Richland & Southwind Area</h3>
 
       <p>
-        Helping you get the most out of your computer and technology.
+        Local technology assistance when available, with remote support
+        options for many common computer issues.
       </p>
 
     </div>
 
-
-    <div class="grid">
-
-      <div class="card">
-
-        <div class="icon">⚡</div>
-
-        <h3>PC Optimization</h3>
-
-        <p>
-          Clean up unnecessary software, improve startup performance,
-          free up storage, and help your computer run more efficiently.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">🛡️</div>
-
-        <h3>Security Setup</h3>
-
-        <p>
-          Improve your Windows security settings and help protect your
-          computer from unwanted software and common threats.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">💾</div>
-
-        <h3>File Backup Setup</h3>
-
-        <p>
-          Help protect important photos, documents, and files with a
-          reliable backup solution.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">🔧</div>
-
-        <h3>Troubleshooting</h3>
-
-        <p>
-          Help diagnosing common computer issues, software problems,
-          updates, drivers, and performance concerns.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">🖥️</div>
-
-        <h3>New Computer Setup</h3>
-
-        <p>
-          Get your new computer set up properly from day one, including
-          updates, security, software, and basic configuration.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">🌐</div>
-
-        <h3>Remote Support</h3>
-
-        <p>
-          Many issues can be diagnosed and resolved remotely without
-          you needing to leave your home.
-        </p>
-
-      </div>
-
-    </div>
-
   </section>
 
 
-  <section class="why" id="about">
-
-    <div class="section-title">
-
-      <h2>Stop Paying for Software You Don't Need</h2>
-
-    </div>
-
-    <p>
-      You don't always need multiple subscriptions, PC cleaners,
-      registry cleaners, or third-party driver updater programs just
-      to keep your computer running properly.
-      <br><br>
-      I help you understand what your computer actually needs and use
-      trusted tools and security practices to keep it running smoothly.
-    </p>
-
-  </section>
-
+  <!-- CONTACT -->
 
   <section class="contact" id="contact">
 
-    <h2>Need IT Help?</h2>
+    <div class="contact-box">
 
-    <p>
-      Send me a message through Nextdoor to discuss your computer issue
-      and see how I can help.
-    </p>
+      <h2>Need Help With Your Technology?</h2>
 
-    <a href="#" class="btn primary">
-      Message Me on Nextdoor
-    </a>
+      <p>
+        Tell me what's going on with your computer or device and we'll figure
+        out the best next step.
+      </p>
+
+      <a
+        href="mailto:csims4039@gmail.com?subject=camgotit%20Support%20Request"
+        class="contact-email"
+      >
+        📧 csims4039@gmail.com
+      </a>
+
+      <br>
+
+      <a
+        href="mailto:csims4039@gmail.com?subject=camgotit%20Support%20Request"
+        class="btn btn-primary"
+      >
+        Describe Your Issue
+      </a>
+
+    </div>
 
   </section>
 
+
+  <!-- FOOTER -->
 
   <footer>
 
     <p>
-      © 2026 Cam IT Services • Fast. Secure. Optimized.
+      <strong>camgotit</strong> · Technology Made Simple.
+    </p>
+
+    <p style="margin-top: 8px;">
+      © 2026 camgotit
     </p>
 
   </footer>
