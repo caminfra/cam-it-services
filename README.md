@@ -226,4 +226,30 @@ CamGotIt IT Services
 
 ---
 
+## 📸 Website Preview
+
+### Homepage
+
+![CamGotIt Homepage](assets/screenshots/homepage.png)
+
+### About
+
+![CamGotIt About Section](assets/screenshots/about.png)
+
+### Services
+
+![CamGotIt Services](assets/screenshots/services.png)
+
+### Why CamGotIt
+
+![Why CamGotIt](assets/screenshots/why-camgotit.png)
+
+### Contact
+
+![CamGotIt Contact](assets/screenshots/contact.png)
+
+### Mobile Experience
+
+![CamGotIt Mobile](assets/screenshots/mobile.png)
+
 > This project is continuously evolving as new technologies, labs, and real-world IT scenarios are added.
