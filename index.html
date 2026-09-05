@@ -544,6 +544,107 @@
     .why-item p { color: var(--muted); font-size: 0.95rem; }
 
     /* ===== CTA ===== */
+
+    /* ===== ABOUT ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+}
+
+.about-visual::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 120, 255, 0.22),
+    rgba(0, 120, 255, 0.05) 45%,
+    transparent 70%
+  );
+  filter: blur(10px);
+}
+
+.about-logo {
+  width: min(320px, 70%);
+  position: relative;
+  z-index: 2;
+  filter:
+    drop-shadow(0 0 25px rgba(0, 120, 255, 0.28))
+    drop-shadow(0 25px 45px rgba(0, 0, 0, 0.45));
+}
+
+.about-content .kicker {
+  margin-bottom: 14px;
+}
+
+.about-content h2 {
+  margin-bottom: 24px;
+}
+
+.about-content p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 18px;
+  max-width: 620px;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.about-highlight {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(16, 22, 36, 0.45);
+}
+
+.about-highlight strong {
+  display: block;
+  font-family: "Exo 2", sans-serif;
+  margin-bottom: 4px;
+}
+
+.about-highlight span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 980px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-visual {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    min-height: 260px;
+  }
+}
+    
     .cta {
       padding-bottom: 120px;
     }
@@ -681,10 +782,11 @@
         </button>
         <nav class="nav-panel" id="navPanel">
           <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#why">Why camgotit?</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+  <li><a href="#about">About</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#why">Why camgotit?</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
           <a class="btn btn-primary btn-nav" href="#contact">Get IT Help</a>
         </nav>
       </div>
@@ -734,7 +836,71 @@
         </div>
       </div>
     </section>
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
 
+      <div class="about-visual">
+        <img
+          src="assets/cglogo2.png"
+          class="about-logo"
+          alt="camgotit CG logo"
+        />
+      </div>
+
+      <div class="about-content">
+        <div class="kicker">About</div>
+
+        <h2>Technology Support Built Around Real Solutions.</h2>
+
+        <p>
+          camgotit IT Services was built around a simple idea: technology
+          should make life easier, not more frustrating.
+        </p>
+
+        <p>
+          Whether you need help improving computer performance, setting up a
+          new device, strengthening security, cleaning up unwanted software,
+          or protecting important files, the goal is straightforward and
+          practical support without unnecessary complexity.
+        </p>
+
+        <p>
+          camgotit is also a growing hands-on technology project focused on
+          modern IT practices, cloud technologies, endpoint management, and
+          automation. Every project helps build real-world skills while
+          creating solutions that can be applied to real environments.
+        </p>
+
+        <div class="about-highlights">
+
+          <div class="about-highlight">
+            <strong>Practical Support</strong>
+            <span>Clear solutions without unnecessary complexity.</span>
+          </div>
+
+          <div class="about-highlight">
+            <strong>Modern IT</strong>
+            <span>Cloud, endpoint management, security, and automation.</span>
+          </div>
+
+          <div class="about-highlight">
+            <strong>Security Mindset</strong>
+            <span>Safer devices, accounts, updates, and backups.</span>
+          </div>
+
+          <div class="about-highlight">
+            <strong>Always Building</strong>
+            <span>Continuously developing real-world IT skills and projects.</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+</section>
     <section id="services">
       <div class="wrap">
         <div class="section-head">
