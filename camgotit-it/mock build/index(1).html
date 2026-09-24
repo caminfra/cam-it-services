@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CamGotIT IT Services — We Handle IT. You Focus on What Matters.</title>
+<meta name="description" content="Reliable, secure IT support for homes and small businesses across the Greater Jackson, MS metro area. Computer repair, Wi-Fi, security, backups, and new device setup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --jet:#0A0A0A;
+    --graphite:#1A1D22;
+    --graphite-2:#22262d;
+    --silver:#C0C4CC;
+    --electric:#0078FF;
+    --steel:#0D47A1;
+    --white:#FFFFFF;
+    --line:rgba(192,196,204,.14);
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--jet);
+    color:var(--silver);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Exo 2',sans-serif;color:var(--white);letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:96px 0}
+
+  /* ===== NAV ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,10,10,.82);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Exo 2';font-weight:800;font-size:20px;color:#fff;letter-spacing:.02em}
+  .brand .cg{
+    width:38px;height:38px;border-radius:9px;
+    display:grid;place-items:center;
+    background:linear-gradient(150deg,#f2f4f7 0%,#b8bec8 38%,#7d838d 60%,#dfe3e8 100%);
+    color:#14171c;font-weight:800;font-size:15px;font-family:'Exo 2';
+    box-shadow:inset 0 1px 1px rgba(255,255,255,.6),inset 0 -2px 3px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.4);
+    letter-spacing:-.03em;
+  }
+  .brand small{display:block;font-family:'Inter';font-weight:500;font-size:9px;letter-spacing:.42em;color:var(--electric);margin-top:1px}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:14.5px;font-weight:500}
+  .nav-links a{color:var(--silver);transition:color .18s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{
+    background:var(--electric);color:#fff;font-weight:600;font-size:14px;
+    padding:11px 20px;border-radius:8px;transition:background .18s,transform .18s;
+  }
+  .nav-cta:hover{background:#1f88ff;transform:translateY(-1px)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.25s}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;padding:120px 0 104px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(680px 380px at 78% 12%,rgba(0,120,255,.20),transparent 62%),
+      radial-gradient(560px 460px at 8% 92%,rgba(13,71,161,.18),transparent 60%);
+  }
+  .hero .diag{
+    position:absolute;top:0;right:-8%;width:52%;height:100%;z-index:0;
+    background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(0,120,255,.05) 46px 47px);
+    -webkit-mask:linear-gradient(115deg,transparent 30%,#000 100%);
+            mask:linear-gradient(115deg,transparent 30%,#000 100%);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:760px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:12.5px;font-weight:600;color:var(--silver);
+    border:1px solid var(--line);border-radius:100px;
+    padding:7px 15px 7px 12px;margin-bottom:26px;background:rgba(255,255,255,.02);
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--electric);box-shadow:0 0 0 4px rgba(0,120,255,.18)}
+  h1.hero-h{font-size:clamp(38px,6.3vw,68px);line-height:1.02;font-weight:800}
+  .hero-h .metal{
+    background:linear-gradient(160deg,#ffffff 5%,#c4c9d1 40%,#7f858f 62%,#e6e9ee 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.sub{font-size:clamp(16px,2vw,19px);color:var(--silver);margin:24px 0 0;max-width:560px}
+  .hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px;
+    padding:15px 26px;border-radius:10px;transition:.18s;cursor:pointer;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--electric);color:#fff;box-shadow:0 8px 26px -8px rgba(0,120,255,.6)}
+  .btn-primary:hover{background:#1f88ff;transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--line);color:#fff;background:rgba(255,255,255,.02)}
+  .btn-ghost:hover{border-color:rgba(192,196,204,.4);background:rgba(255,255,255,.05)}
+  .hero-trust{display:flex;gap:26px;margin-top:44px;flex-wrap:wrap;font-size:13.5px;color:var(--silver)}
+  .hero-trust span{display:flex;align-items:center;gap:8px}
+  .hero-trust svg{color:var(--electric);flex-shrink:0}
+
+  /* ===== SECTION HEADER ===== */
+  .sec-head{max-width:620px;margin-bottom:56px}
+  .sec-head .kick{color:var(--electric);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);line-height:1.1;font-weight:700}
+  .sec-head p{margin-top:16px;font-size:16.5px}
+
+  /* ===== SERVICES ===== */
+  .services{background:linear-gradient(180deg,var(--jet),#0c0e11)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc{
+    position:relative;background:var(--graphite);border:1px solid var(--line);
+    border-radius:16px;padding:30px 26px;overflow:hidden;transition:border-color .2s,transform .2s;
+  }
+  .svc::after{content:"";position:absolute;left:0;top:0;height:3px;width:100%;
+    background:linear-gradient(90deg,var(--electric),transparent);transform:scaleX(0);transform-origin:left;transition:transform .28s}
+  .svc:hover{transform:translateY(-4px);border-color:rgba(0,120,255,.4)}
+  .svc:hover::after{transform:scaleX(1)}
+  .svc .ico{
+    width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:20px;
+    background:rgba(0,120,255,.12);border:1px solid rgba(0,120,255,.25);color:var(--electric);
+  }
+  .svc h3{font-size:18.5px;font-weight:600;margin-bottom:9px}
+  .svc p{font-size:14.5px}
+  .svc .price{margin-top:16px;font-family:'Exo 2';font-weight:700;color:#fff;font-size:15px}
+  .svc .price span{color:var(--silver);font-weight:500;font-size:13px;font-family:'Inter'}
+
+  /* ===== WHY ===== */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .why-list{display:flex;flex-direction:column;gap:24px}
+  .why-item{display:flex;gap:16px}
+  .why-item .n{
+    flex-shrink:0;width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+    background:var(--graphite);border:1px solid var(--line);color:var(--electric);
+  }
+  .why-item h3{font-size:17px;font-weight:600;margin-bottom:4px}
+  .why-item p{font-size:14.5px}
+  .why-panel{
+    background:var(--graphite);border:1px solid var(--line);border-radius:20px;padding:38px;
+    position:relative;overflow:hidden;
+  }
+  .why-panel::before{content:"";position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,120,255,.16),transparent 70%)}
+  .why-panel .big{font-family:'Exo 2';font-weight:800;font-size:46px;color:#fff;line-height:1}
+  .why-panel .big small{font-size:20px;color:var(--electric)}
+  .why-panel .lbl{font-size:14px;margin-top:6px;margin-bottom:26px}
+  .why-panel hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+  .pill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+  .pill{font-size:12.5px;padding:6px 13px;border-radius:100px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--silver)}
+
+  /* ===== AREA ===== */
+  .area{background:#0c0e11}
+  .area-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .area-cities{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  .city{
+    display:flex;align-items:center;gap:12px;background:var(--graphite);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px;font-weight:600;color:#fff;font-size:15.5px;font-family:'Exo 2';
+  }
+  .city svg{color:var(--electric)}
+  .area-note{margin-top:20px;font-size:14px;color:var(--silver)}
+
+  /* ===== CONTACT ===== */
+  .contact-card{
+    background:linear-gradient(135deg,var(--graphite),#13161b);
+    border:1px solid var(--line);border-radius:22px;padding:52px;
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden;
+  }
+  .contact-card::before{content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;
+    background:linear-gradient(90deg,var(--steel),var(--electric),transparent)}
+  .contact-card h2{font-size:32px;font-weight:700;margin-bottom:12px}
+  .contact-list{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+  .contact-row{display:flex;align-items:center;gap:14px;font-size:15.5px;color:#fff}
+  .contact-row .ci{width:42px;height:42px;border-radius:11px;background:rgba(0,120,255,.12);
+    border:1px solid rgba(0,120,255,.25);display:grid;place-items:center;color:var(--electric);flex-shrink:0}
+  .contact-row small{display:block;color:var(--silver);font-size:12.5px;font-weight:400;font-family:'Inter'}
+  .contact-cta{display:flex;flex-direction:column;gap:12px}
+  .contact-cta .btn{justify-content:center;width:100%}
+
+  /* ===== FOOTER ===== */
+  footer{border-top:1px solid var(--line);padding:52px 0 34px;background:var(--jet)}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:34px}
+  .foot-tag{max-width:320px;font-size:14px;margin-top:16px}
+  .foot-cols{display:flex;gap:64px;flex-wrap:wrap}
+  .foot-col h4{color:#fff;font-family:'Exo 2';font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+  .foot-col a{display:block;font-size:14px;margin-bottom:10px;color:var(--silver);transition:color .16s}
+  .foot-col a:hover{color:#fff}
+  .foot-bot{display:flex;justify-content:space-between;padding-top:26px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--silver);flex-wrap:wrap;gap:12px}
+  .foot-bot .reliable{display:flex;gap:20px;align-items:center}
+  .foot-bot .reliable b{color:var(--electric);font-weight:600}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:880px){
+    .nav-links{position:fixed;top:72px;left:0;right:0;flex-direction:column;gap:0;
+      background:rgba(10,10,10,.98);border-bottom:1px solid var(--line);padding:8px 0;
+      transform:translateY(-140%);transition:transform .3s;height:auto}
+    .nav-links.open{transform:translateY(0)}
+    .nav-links a{padding:15px 24px;width:100%}
+    .nav-links .nav-cta{margin:10px 24px;text-align:center}
+    .burger{display:flex}
+    .svc-grid{grid-template-columns:1fr}
+    .why-grid,.area-grid,.contact-card{grid-template-columns:1fr}
+    .contact-card{padding:34px 26px}
+    section{padding:70px 0}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+  :focus-visible{outline:2px solid var(--electric);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="CamGotIT home">
+      <span class="cg">CG</span>
+      <span>CAMGOTIT<small>IT SERVICES</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:+17692087034">Call Now</a>
+    </nav>
+    <div class="burger" id="burger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="diag"></div>
+    <div class="wrap hero-inner">
+      <span class="eyebrow"><span class="dot"></span> Serving the Greater Jackson, MS metro area</span>
+      <h1 class="hero-h">Tech problems, solved.<br><span class="metal">We handle IT.</span> You focus on what matters.</h1>
+      <p class="sub">Reliable, secure, no-jargon tech support for homes and small businesses. From a slow laptop to a whole office setup — one call gets it handled.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+17692087034">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (769) 208-7034
+        </a>
+        <a class="btn btn-ghost" href="#services">View services</a>
+      </div>
+      <div class="hero-trust">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Upfront flat pricing</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Remote &amp; on-site</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> No fix, no fee</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kick">What we do</div>
+        <h2>Straightforward help for every kind of tech headache</h2>
+        <p>Flat-rate pricing so you know the cost before we start. No surprises, no upselling.</p>
+      </div>
+      <div class="svc-grid">
+
+        <div class="svc">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
+          <h3>PC Tune-Up &amp; Repair</h3>
+          <p>Slow, freezing, or acting up? We clean it out, speed it up, and get it running like new.</p>
+          <div class="price">$79 <span>/ flat</span></div>
+        </div>
+
+        <div class="svc">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0 1 14 0M2 8.82a16 16 0 0 1 20 0M8.5 16.4a6 6 0 0 1 7 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg></div>
+          <h3>Wi-Fi &amp; Network Fixes</h3>
+          <p>Dead zones, dropped connections, slow speeds. We get every room online and stable.</p>
+          <div class="price">$89 <span>/ flat</span></div>
+        </div>
+
+        <div class="svc">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Security Setup</h3>
+          <p>Antivirus, safe browsing, strong passwords, and updates — configured so you stay protected.</p>
+          <div class="price">$99 <span>/ flat</span></div>
+        </div>
+
+        <div class="svc">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-9-9c2.5 0 4.5 1 6 2.5"/><path d="M21 3v5h-5"/></svg></div>
+          <h3>File Backup</h3>
+          <p>Protect the photos and documents you can't replace, with backups that actually run.</p>
+          <div class="price">$69 <span>/ flat</span></div>
+        </div>
+
+        <div class="svc">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M9 16v4m6-4v4"/></svg></div>
+          <h3>New Device Setup</h3>
+          <p>New computer, printer, or phone? We set it up, move your files, and show you the ropes.</p>
+          <div class="price">$89 <span>/ flat</span></div>
+        </div>
+
+        <div class="svc">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6 6 18M6 6l12 12"/><circle cx="12" cy="12" r="10"/></svg></div>
+          <h3>Pop-Up &amp; Ad Cleanup</h3>
+          <p>Remove junk software, browser hijacks, and endless pop-ups slowing your machine down.</p>
+          <div class="price">$59 <span>/ flat</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="wrap why-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:36px">
+          <div class="kick">Why CamGotIT</div>
+          <h2>IT support that treats you like a person</h2>
+          <p>No hold music, no confusing tech-speak, no bloated invoices. Just honest help from someone local.</p>
+        </div>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="n"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div><h3>Fast, local response</h3><p>Based right here in the Jackson metro — same-day and next-day appointments available.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="n"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div><h3>Flat, upfront pricing</h3><p>You approve the price before any work starts. If we can't fix it, you don't pay.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="n"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><h3>Plain-English help</h3><p>We explain what's wrong and how we fixed it, without the jargon or the lecture.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-panel">
+        <div class="big">100<small>%</small></div>
+        <div class="lbl">Satisfaction-first: no fix, no fee</div>
+        <div class="big">24<small>hr</small></div>
+        <div class="lbl">Typical response time on new requests</div>
+        <hr>
+        <div style="color:#fff;font-family:'Exo 2';font-weight:600;font-size:14px;margin-bottom:4px">Built on</div>
+        <div class="pill-row">
+          <span class="pill">Cloud Solutions</span>
+          <span class="pill">Security Focused</span>
+          <span class="pill">Systems Management</span>
+          <span class="pill">IT Support You Trust</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA -->
+  <section class="area" id="area">
+    <div class="wrap area-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:20px">
+          <div class="kick">Where we work</div>
+          <h2>Proudly serving the Greater Jackson metro</h2>
+          <p>On-site across the metro, plus remote support anywhere your device can get online.</p>
+        </div>
+        <p class="area-note">Not sure if you're in range? Give us a call — if we can't come to you, we can likely help remotely.</p>
+      </div>
+      <div>
+        <div class="area-cities">
+          <div class="city"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Pearl</div>
+          <div class="city"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Richland</div>
+          <div class="city"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Florence</div>
+          <div class="city"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Jackson</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <div>
+          <h2>Let's get IT handled</h2>
+          <p>Call or email for a free quote. Tell us what's going on and we'll tell you exactly what it'll cost.</p>
+          <div class="contact-list">
+            <div class="contact-row"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> (769) 208-7034 <small style="margin-left:auto"></small></div>
+            <div class="contact-row"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span> support@camgotit.com</div>
+            <div class="contact-row"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span> Greater Jackson Metro, MS</div>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <a class="btn btn-primary" href="tel:+17692087034">Call for a free quote</a>
+          <a class="btn btn-ghost" href="mailto:support@camgotit.com">Email us</a>
+          <p style="font-size:13px;text-align:center;margin-top:4px">Typically replies within 24 hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top"><span class="cg">CG</span><span>CAMGOTIT<small>IT SERVICES</small></span></a>
+        <p class="foot-tag">Reliable, secure, and efficient IT solutions for homes and small businesses. From cloud to endpoint, we've got IT handled.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Services</h4>
+          <a href="#services">PC Repair</a>
+          <a href="#services">Wi-Fi &amp; Network</a>
+          <a href="#services">Security Setup</a>
+          <a href="#services">Device Setup</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="#why">Why Us</a>
+          <a href="#area">Service Area</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Get in touch</h4>
+          <a href="tel:+17692087034">(769) 208-7034</a>
+          <a href="mailto:support@camgotit.com">support@camgotit.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 CamGotIT IT Services · Cameron Sims, Founder</span>
+      <span class="reliable"><b>Reliable</b> • <b>Secure</b> • <b>Efficient</b></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger=document.getElementById('burger');
+  const links=document.getElementById('navlinks');
+  const toggle=()=>links.classList.toggle('open');
+  burger.addEventListener('click',toggle);
+  burger.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script>
+
+</body>
+</html>

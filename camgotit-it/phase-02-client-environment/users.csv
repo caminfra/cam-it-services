@@ -1,0 +1,16 @@
+DisplayName,FirstName,LastName,UserPrincipalName,JobTitle,Department,Groups,DeviceType,License,UsageLocation
+Margaret Whitfield,Margaret,Whitfield,mwhitfield@meridian-law.com,Managing Partner,Partners,Partners;Leadership;AllStaff,Laptop,M365 Business Premium,US
+David Okonkwo,David,Okonkwo,dokonkwo@meridian-law.com,Senior Partner,Partners,Partners;Leadership;AllStaff,Laptop,M365 Business Premium,US
+Priya Nair,Priya,Nair,pnair@meridian-law.com,Attorney,Legal,Attorneys;Legal;AllStaff,Laptop,M365 Business Premium,US
+James Calloway,James,Calloway,jcalloway@meridian-law.com,Attorney,Legal,Attorneys;Legal;AllStaff,Laptop,M365 Business Premium,US
+Sofia Reyes,Sofia,Reyes,sreyes@meridian-law.com,Associate Attorney,Legal,Attorneys;Legal;AllStaff,Laptop,M365 Business Premium,US
+Terrence Boyd,Terrence,Boyd,tboyd@meridian-law.com,Senior Paralegal,Legal,Paralegals;Legal;AllStaff,Desktop,M365 Business Standard,US
+Hannah Liu,Hannah,Liu,hliu@meridian-law.com,Paralegal,Legal,Paralegals;Legal;AllStaff,Desktop,M365 Business Standard,US
+Robert Duval,Robert,Duval,rduval@meridian-law.com,Accounting Manager,Accounting,Accounting;Finance;AllStaff,Desktop,M365 Business Premium,US
+Angela Foster,Angela,Foster,afoster@meridian-law.com,Staff Accountant,Accounting,Accounting;Finance;AllStaff,Desktop,M365 Business Standard,US
+Michael Tran,Michael,Tran,mtran@meridian-law.com,Bookkeeper,Accounting,Accounting;Finance;AllStaff,Desktop,M365 Business Standard,US
+Denise Coleman,Denise,Coleman,dcoleman@meridian-law.com,Office Manager,Administration,Admin;Leadership;AllStaff,Desktop,M365 Business Standard,US
+Ashley Bennett,Ashley,Bennett,abennett@meridian-law.com,Legal Secretary,Administration,Admin;AllStaff,Desktop,M365 Business Standard,US
+Carlos Mendez,Carlos,Mendez,cmendez@meridian-law.com,Receptionist,Administration,Admin;AllStaff,Desktop,M365 Business Basic,US
+Cameron Sims,Cameron,Sims,csims@meridian-law.com,IT Consultant (CamGotIT),IT,IT;Admins;AllStaff,Laptop,M365 Business Premium,US
+Conference Room,Conference,Room,croom@meridian-law.com,Conference Room Calendar,Shared,Resources,N/A,Meeting Room (resource),US

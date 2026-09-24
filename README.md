@@ -1,255 +1,142 @@
-# CamGotIt IT Services
+<div align="center">
 
-A modern IT services website and hands-on portfolio project built to showcase practical IT support, endpoint management, cloud technologies, automation, and real-world technical skills.
+# CamGotIT IT Services
 
-## 🌐 Project Overview
+**We handle IT. You focus on what matters.**
 
-**CamGotIt IT Services** is a professional IT services brand and portfolio environment focused on providing straightforward technology support while documenting the development of real-world IT skills and projects.
+A real IT services business **and** the cloud engineering portfolio behind it — one brand, one repo, the full arc from infrastructure to identity.
 
-The website serves as the public-facing foundation of the CamGotIt project and highlights services such as:
+`Reliable` • `Secure` • `Efficient`
 
-* PC optimization
-* Security setup
-* File backup
-* Remote support
-* New device setup
-* Pop-up and unwanted software cleanup
-
-The project will continue to expand beyond the website into hands-on technical environments involving cloud infrastructure, endpoint management, automation, and security.
+</div>
 
 ---
 
-## 🚀 Phase 1 — Website Foundation
+## What this repo is
 
-Phase 1 focused on building and refining the public-facing CamGotIt IT Services website.
+CamGotIT is two things at once, told as one story:
 
-### Completed
+1. **A real local IT business** serving the Greater Jackson, MS metro — computer repair, Wi-Fi, security, backups, device setup, with flat, upfront pricing.
+2. **A hands-on cloud portfolio** that documents CamGotIT building its own Azure footprint and then onboarding a compliance-sensitive client — a law firm — provisioning their identities, securing their devices, and automating their lifecycle.
 
-* ✅ CamGotIt branding and logo implementation
-* ✅ GitHub Pages website
-* ✅ Responsive navigation
-* ✅ Hero section
-* ✅ About section
-* ✅ IT services section
-* ✅ Contact and business information
-* ✅ Remote support information
-* ✅ Mobile optimization
-* ✅ Responsive service cards
-* ✅ CG branding consistency
+> **The narrative:** *CamGotIT is a real MSP. Here is the actual cloud engineering behind it — infrastructure, identity, endpoint management, and automation, done the way a real managed-services provider would.*
+
+This is built to read like client work, not isolated labs. Every technical decision has a business reason behind it.
 
 ---
 
-## 🖥️ Website Features
+## The three tracks
 
-### IT Services
+| Track | What it covers | Tooling | Status |
+|---|---|---|---|
+| **Business** | Website, branding, services, pricing, marketing | HTML/CSS/JS, GitHub Pages | ✅ Built |
+| **Azure footprint** | Light, realistic cloud backbone (resource group, Key Vault, storage) to support automation | Azure CLI / Terraform | 🔜 Planned |
+| **Meridian client** | The main technical work: M365 tenant, Entra ID users & groups, licensing, MFA, Intune, Conditional Access, PowerShell/Graph automation | PowerShell + Microsoft Graph, Intune | 🔜 Planned |
 
-The website currently highlights practical IT support services including:
-
-* **PC Optimization**
-  Improving computer performance by reducing unnecessary startup programs and software.
-
-* **Security Setup**
-  Helping configure safer device settings, updates, browser security, and account protection.
-
-* **File Backup**
-  Helping protect important files, documents, and photos.
-
-* **Remote Support**
-  Providing assistance with eligible software and configuration issues remotely.
-
-* **New Device Setup**
-  Setting up computers, software, printers, accounts, and essential settings.
-
-* **Pop-Up & Ad Cleanup**
-  Removing unwanted browser extensions, notifications, and unnecessary software.
+> Azure is intentionally **light and realistic** — a genuine footprint that supports the client work, not an enterprise landing zone for its own sake. The weight of the portfolio is on **identity + endpoint management**, which is where the strongest real-job and AZ-104 relevance lives.
 
 ---
 
-## 🛠️ Technologies Used
+## The client: Meridian Law & Advisory
 
-* HTML5
-* CSS3
-* JavaScript
-* GitHub
-* GitHub Pages
+A fictional 14-person law firm (with an in-house accounting practice) in the Jackson metro, managed by CamGotIT. A compliance-heavy firm is the richest possible sandbox: attorney–client privilege and financial records in one tenant force real least-privilege access, data segmentation, MFA, device compliance, and audit logging.
 
-Additional technologies and platforms will be incorporated as the CamGotIt project expands.
+Full design, roster, and group matrix: [`docs/phase-02-client-environment/`](docs/phase-02-client-environment/)
 
 ---
 
-## 📱 Responsive Design
+## Repository structure
 
-The website was designed to work across desktop and mobile devices.
-
-Responsive features include:
-
-* Mobile navigation menu
-* Responsive hero layout
-* Stacked mobile service cards
-* Mobile-friendly buttons
-* Responsive About section
-* Responsive contact information
-
----
-
-## 📂 Project Structure
-
-```text
+```
 cam-it-services/
+├── index.html                         # Business website
+├── services-pricing.html              # Print-ready services & pricing sheet
+├── business-card.html                 # Print-ready business card
 │
-├── index.html
+├── marketing/
+│   ├── google-business-profile.md     # GBP setup guide
+│   └── facebook-starter-kit.md        # FB page bio + first posts
 │
-├── assets/
-    |- cglogo.png
-    |
-│   └── cglogo2.png
+├── docs/
+│   ├── PROJECT-PLAN.md                # Milestones, board, issues, sprints
+│   ├── phase-02-client-environment/   # Meridian org design
+│   │   ├── README.md                  #   company profile, org, compliance drivers
+│   │   ├── users.csv                  #   bulk-import-ready roster (Entra ID)
+│   │   └── groups.md                  #   group membership matrix
+│   └── diagrams/                      # architecture diagrams (coming)
 │
-└── README.md
+├── azure/                             # Light Azure footprint (coming)
+├── meridian/                          # M365/Graph/Intune automation (coming)
+├── scripts/                           # shared helpers (coming)
+│
+└── README.md                          # you are here
 ```
 
 ---
 
-# 🗺️ Project Roadmap
+## Brand kit
 
-CamGotIt is being developed as a long-term IT services and technical portfolio environment.
+| Token | Hex |
+|-------|-----|
+| Jet Black | `#0A0A0A` |
+| Graphite | `#1A1D22` |
+| Silver | `#C0C4CC` |
+| Electric Blue | `#0078FF` |
+| Steel Blue | `#0D47A1` |
+| White | `#FFFFFF` |
 
-### Phase 1 — Website Foundation ✅
-
-* Branding
-* Website
-* Services
-* About section
-* Contact information
-* Mobile optimization
-* Documentation
-
-### Phase 2 — Client Environment Lab 🔄
-
-Build a fictional client environment to simulate real-world IT administration.
-
-Planned areas include:
-
-* Users and identities
-* Device management
-* Endpoint configuration
-* Security policies
-* Documentation
-
-### Phase 3 — Microsoft Intune
-
-Develop a hands-on Intune environment.
-
-Planned areas include:
-
-* Device enrollment
-* Configuration profiles
-* Compliance policies
-* Application deployment
-* Endpoint security
-* Autopilot
-
-### Phase 4 — Cloud Infrastructure
-
-Expand the environment into cloud technologies.
-
-Potential technologies include:
-
-* Microsoft Azure
-* Azure networking
-* Virtual machines
-* Identity management
-* Role-Based Access Control
-* Cloud security
-
-### Phase 5 — Automation
-
-Develop automation solutions to improve IT workflows.
-
-Planned technologies include:
-
-* PowerShell
-* Microsoft Graph
-* Automation workflows
-* Endpoint automation
+**Type:** Exo 2 (logo / display) · Inter (body / UI)
+**Tagline:** *We handle IT. You focus on what matters.*
 
 ---
 
-# 📸 Project Documentation
+## Roadmap
 
-Each phase of the CamGotIt project will include:
+| Milestone | Focus | Status |
+|---|---|---|
+| **Phase 1** | Business foundation — site, brand, marketing | ✅ Done |
+| **M0** | Project & toolchain setup | 🔜 Next |
+| **M1** | Light Azure footprint (RG, Key Vault, storage) | 🔜 Planned |
+| **M2** | Meridian tenant provisioning (users, groups, licensing) | 🔜 Planned |
+| **M3** | Identity security (MFA, least-privilege, break-glass) | 🔜 Planned |
+| **M4** | Endpoint management (Intune compliance, config, Conditional Access) | 🔜 Planned |
+| **M5** | Automation & documentation (offboarding, reporting, diagrams) | 🔜 Planned |
 
-* Clear objectives
-* Implementation steps
-* Screenshots and evidence
-* Technical documentation
-* Troubleshooting notes
-* GitHub updates
-
-The goal is to treat the project like a real IT environment rather than simply completing isolated labs.
-
----
-
-# 🎯 Project Goal
-
-The long-term goal of CamGotIt is to build a documented portfolio demonstrating practical experience across:
-
-* IT Support
-* Endpoint Management
-* Microsoft Intune
-* Microsoft Entra ID
-* Microsoft Azure
-* Cloud Infrastructure
-* Security
-* PowerShell
-* Automation
+Full detail — exit criteria, board, labels, and copy-paste issues — in [`docs/PROJECT-PLAN.md`](docs/PROJECT-PLAN.md).
 
 ---
 
-## 📌 Current Status
+## Tech stack
 
-**Phase 1: Website Foundation — In Progress**
-
-Next steps:
-
-* Capture final website screenshots
-* Document Phase 1 implementation
-* Finalize GitHub repository updates
-* Begin the Client Environment Lab
+**Business site:** HTML5 · CSS3 · JavaScript · GitHub Pages
+**Cloud & identity:** Microsoft Azure · Entra ID · Microsoft 365 · Intune · PowerShell · Microsoft Graph · Terraform
 
 ---
 
-## 👨‍💻 Author
+## Services
 
-**Cameron Sims**
+| Service | Flat price |
+|---|---|
+| PC Tune-Up & Repair | $79 |
+| Wi-Fi & Network Fixes | $89 |
+| Security Setup | $99 |
+| File Backup | $69 |
+| New Device Setup | $89 |
+| Pop-Up & Ad Cleanup | $59 |
 
-CamGotIt IT Services
+Remote and on-site. Small-business support and monthly care plans available. No fix, no fee.
 
 ---
 
-## 📸 Website Preview
+## Contact
 
-### Homepage
+**Cameron Sims** — Founder & IT Consultant
+📞 (769) 208-7034
+📧 support@camgotit.com
+📍 Serving the Greater Jackson Metro, MS
 
-![CamGotIt Homepage](assets/screenshots/homepage.png)
+---
 
-### About
-
-![CamGotIt About Section](assets/screenshots/about.png)
-
-### Services
-
-![CamGotIt Services](assets/screenshots/services.png)
-
-### Why CamGotIt
-
-![Why CamGotIt](assets/screenshots/why-camgotit.png)
-
-### Contact
-
-![CamGotIt Contact](assets/screenshots/contact.png)
-
-### Mobile Experience
-
-![CamGotIt Mobile](assets/screenshots/mobile.png)
-
-> This project is continuously evolving as new technologies, labs, and real-world IT scenarios are added.
+<div align="center">
+<sub>Meridian Law & Advisory is a fictional client created for portfolio purposes. This project is continuously evolving as new labs and real-world IT scenarios are added.</sub>
+</div>

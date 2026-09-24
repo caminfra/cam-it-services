@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CamGotIT — Business Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--jet:#0A0A0A;--graphite:#1A1D22;--silver:#C0C4CC;--electric:#0078FF;--steel:#0D47A1;--line:rgba(192,196,204,.16)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#05060a;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;padding:44px;font-family:'Inter',sans-serif}
+  .label{color:var(--silver);font-family:'Exo 2';font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:-18px;align-self:flex-start;margin-left:calc(50% - 1.75in)}
+  .card{
+    width:3.5in;height:2in;border-radius:14px;position:relative;overflow:hidden;
+    box-shadow:0 24px 60px -18px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.04);
+  }
+  /* FRONT */
+  .front{background:radial-gradient(120% 140% at 80% 0%,#191d24 0%,#0a0a0a 60%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.06in}
+  .front .diag{position:absolute;inset:0;background:repeating-linear-gradient(120deg,transparent 0 26px,rgba(0,120,255,.05) 26px 27px);
+    -webkit-mask:linear-gradient(120deg,transparent 40%,#000);mask:linear-gradient(120deg,transparent 40%,#000)}
+  .cg-big{width:.66in;height:.66in;border-radius:.12in;display:grid;place-items:center;position:relative;z-index:2;
+    background:linear-gradient(150deg,#f4f6f9,#c0c6cf 38%,#7a808b 62%,#e4e7ec);color:#14171c;
+    font-family:'Exo 2';font-weight:800;font-size:.3in;letter-spacing:-.04em;
+    box-shadow:inset 0 1px 2px rgba(255,255,255,.7),inset 0 -3px 4px rgba(0,0,0,.4),0 4px 10px rgba(0,0,0,.5)}
+  .front .wm{font-family:'Exo 2';font-weight:800;color:#fff;font-size:.26in;letter-spacing:.02em;position:relative;z-index:2;line-height:1}
+  .front .sv{position:relative;z-index:2;display:flex;align-items:center;gap:8px;margin-top:1px}
+  .front .sv .ln{width:.3in;height:1px;background:var(--electric)}
+  .front .sv span{font-size:8px;letter-spacing:.4em;color:var(--silver);font-weight:500}
+  .front .tag{position:absolute;bottom:.16in;left:0;right:0;text-align:center;font-size:7.5px;letter-spacing:.14em;color:var(--electric);font-weight:600;z-index:2}
+  /* BACK */
+  .back{background:var(--jet);padding:.24in .26in;display:flex;flex-direction:column;justify-content:space-between}
+  .back::before{content:"";position:absolute;left:0;top:0;bottom:0;width:.07in;background:linear-gradient(180deg,var(--electric),var(--steel))}
+  .back .top{display:flex;align-items:center;gap:9px;position:relative;z-index:2}
+  .cg-sm{width:.42in;height:.42in;border-radius:.08in;display:grid;place-items:center;flex-shrink:0;
+    background:linear-gradient(150deg,#f4f6f9,#c0c6cf 38%,#7a808b 62%,#e4e7ec);color:#14171c;
+    font-family:'Exo 2';font-weight:800;font-size:.17in;letter-spacing:-.04em;
+    box-shadow:inset 0 1px 1px rgba(255,255,255,.6),inset 0 -2px 3px rgba(0,0,0,.35)}
+  .back .nm{font-family:'Exo 2';color:#fff;font-weight:700;font-size:.155in;line-height:1.1}
+  .back .nm small{display:block;font-family:'Inter';font-weight:500;font-size:7.5px;color:var(--silver);letter-spacing:.02em;margin-top:2px}
+  .back .info{display:flex;flex-direction:column;gap:.055in;position:relative;z-index:2}
+  .back .row{display:flex;align-items:center;gap:8px;font-size:9px;color:var(--silver)}
+  .back .row svg{color:var(--electric);flex-shrink:0}
+  .back .row b{color:#fff;font-weight:500}
+  .back .strip{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:.09in}
+  .back .strip .sv{font-size:7px;letter-spacing:.28em;color:var(--electric);font-weight:600}
+  .back .strip .rse{font-size:7px;color:var(--silver)}
+  .back .strip .rse b{color:var(--electric)}
+  @media print{body{background:#fff;gap:.3in;padding:.4in}.label{display:none}.card{box-shadow:none;outline:1px solid #ddd}@page{size:auto;margin:.3in}}
+</style>
+</head>
+<body>
+
+  <div class="label">Front</div>
+  <div class="card front">
+    <div class="diag"></div>
+    <div class="cg-big">CG</div>
+    <div class="wm">CAMGOTIT</div>
+    <div class="sv"><span style="letter-spacing:.4em">IT&nbsp;SERVICES</span></div>
+    <div class="tag">WE HANDLE IT. YOU FOCUS ON WHAT MATTERS.</div>
+  </div>
+
+  <div class="label">Back</div>
+  <div class="card back">
+    <div class="top">
+      <div class="cg-sm">CG</div>
+      <div class="nm">Cameron Sims<small>Founder &amp; IT Consultant</small></div>
+    </div>
+    <div class="info">
+      <div class="row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <b>(769) 208-7034</b></div>
+      <div class="row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> support@camgotit.com</div>
+      <div class="row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Serving the Greater Jackson Metro, MS</div>
+    </div>
+    <div class="strip">
+      <span class="sv">CAMGOTIT.COM</span>
+      <span class="rse"><b>Reliable</b> • <b>Secure</b> • <b>Efficient</b></span>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CamGotIT — Services &amp; Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--jet:#0A0A0A;--graphite:#1A1D22;--silver:#C0C4CC;--electric:#0078FF;--steel:#0D47A1;--line:rgba(192,196,204,.16)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#050608;font-family:'Inter',sans-serif;padding:32px 16px;display:flex;justify-content:center}
+  .sheet{
+    width:8.5in;min-height:11in;background:var(--jet);color:var(--silver);
+    padding:.6in .62in;box-shadow:0 20px 60px rgba(0,0,0,.6);position:relative;overflow:hidden;
+  }
+  .sheet::before{content:"";position:absolute;top:0;right:0;width:46%;height:230px;
+    background:repeating-linear-gradient(120deg,transparent 0 40px,rgba(0,120,255,.06) 40px 41px);
+    -webkit-mask:linear-gradient(120deg,transparent,#000);mask:linear-gradient(120deg,transparent,#000)}
+  h1,h2,h3,.ex{font-family:'Exo 2';color:#fff}
+  .head{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .cg{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(150deg,#f2f4f7,#b8bec8 40%,#7d838d 62%,#dfe3e8);color:#14171c;
+    font-family:'Exo 2';font-weight:800;font-size:19px;letter-spacing:-.04em;
+    box-shadow:inset 0 1px 1px rgba(255,255,255,.6),inset 0 -2px 3px rgba(0,0,0,.35)}
+  .brand .nm{font-family:'Exo 2';font-weight:800;font-size:22px;color:#fff;letter-spacing:.02em;line-height:1}
+  .brand .nm small{display:block;font-family:'Inter';font-weight:500;font-size:8.5px;letter-spacing:.4em;color:var(--electric);margin-top:3px}
+  .head .r{text-align:right;font-size:12px;line-height:1.7}
+  .head .r b{color:#fff}
+  .title{margin:26px 0 4px;font-size:27px;font-weight:700;color:#fff;position:relative;z-index:2}
+  .subtitle{font-size:13.5px;position:relative;z-index:2;margin-bottom:24px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .card{background:var(--graphite);border:1px solid var(--line);border-radius:11px;padding:15px 16px;position:relative}
+  .card::after{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:3px;background:var(--electric)}
+  .card h3{font-size:14.5px;font-weight:600;margin-bottom:3px;padding-left:8px}
+  .card p{font-size:11.5px;padding-left:8px;line-height:1.45}
+  .card .pr{display:flex;align-items:baseline;gap:6px;margin-top:9px;padding-left:8px}
+  .card .pr b{font-family:'Exo 2';color:#fff;font-size:17px;font-weight:700}
+  .card .pr span{font-size:10.5px;color:var(--silver)}
+  .section-label{font-family:'Exo 2';font-weight:600;color:var(--electric);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:26px 0 12px}
+  .rates{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .rate{background:linear-gradient(135deg,var(--graphite),#13161b);border:1px solid var(--line);border-radius:11px;padding:16px 18px}
+  .rate .ex{font-size:13px;font-weight:600;margin-bottom:8px}
+  .rate ul{list-style:none;font-size:11.5px;line-height:1.9}
+  .rate li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:2px 0}
+  .rate li b{color:#fff;font-family:'Exo 2';font-weight:600}
+  .rate li:last-child{border:none}
+  .note{margin-top:22px;background:rgba(0,120,255,.06);border:1px solid rgba(0,120,255,.22);border-radius:11px;padding:14px 16px;font-size:11.5px;line-height:1.6}
+  .note b{color:#fff}
+  .foot{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:11px}
+  .foot .tag{font-family:'Exo 2';color:#fff;font-weight:600;letter-spacing:.02em}
+  .foot .rse b{color:var(--electric)}
+  @media print{body{background:#fff;padding:0}.sheet{box-shadow:none;width:100%;min-height:100vh}@page{margin:0;size:letter}}
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="head">
+      <div class="brand">
+        <div class="cg">CG</div>
+        <div class="nm">CAMGOTIT<small>IT SERVICES</small></div>
+      </div>
+      <div class="r">
+        <b>(769) 208-7034</b><br>
+        support@camgotit.com<br>
+        Greater Jackson Metro, MS
+      </div>
+    </div>
+
+    <div class="title">Services &amp; Pricing</div>
+    <div class="subtitle">Flat-rate pricing, approved before any work begins. No fix, no fee.</div>
+
+    <div class="grid">
+      <div class="card"><h3>PC Tune-Up &amp; Repair</h3><p>Speed up slow, freezing, or glitchy computers.</p><div class="pr"><b>$79</b><span>flat</span></div></div>
+      <div class="card"><h3>Wi-Fi &amp; Network Fixes</h3><p>Kill dead zones and dropped connections.</p><div class="pr"><b>$89</b><span>flat</span></div></div>
+      <div class="card"><h3>Security Setup</h3><p>Antivirus, updates, passwords, safe browsing.</p><div class="pr"><b>$99</b><span>flat</span></div></div>
+      <div class="card"><h3>File Backup</h3><p>Protect photos and documents you can't replace.</p><div class="pr"><b>$69</b><span>flat</span></div></div>
+      <div class="card"><h3>New Device Setup</h3><p>Computers, printers, phones — set up and moved over.</p><div class="pr"><b>$89</b><span>flat</span></div></div>
+      <div class="card"><h3>Pop-Up &amp; Ad Cleanup</h3><p>Remove junk software and browser hijacks.</p><div class="pr"><b>$59</b><span>flat</span></div></div>
+    </div>
+
+    <div class="section-label">Remote vs. On-Site</div>
+    <div class="rates">
+      <div class="rate">
+        <div class="ex">Remote Support</div>
+        <ul>
+          <li><span>Same flat rate as listed</span><b>Listed price</b></li>
+          <li><span>Quick fixes (under 20 min)</span><b>$29</b></li>
+          <li><span>Follow-up within 7 days</span><b>Free</b></li>
+        </ul>
+      </div>
+      <div class="rate">
+        <div class="ex">On-Site Visit</div>
+        <ul>
+          <li><span>Service price</span><b>Listed price</b></li>
+          <li><span>Trip fee (within metro)</span><b>$25</b></li>
+          <li><span>Additional hour, if needed</span><b>$45</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-label">Small Business</div>
+    <div class="rates">
+      <div class="rate">
+        <div class="ex">Per-Visit</div>
+        <ul>
+          <li><span>On-site support (hourly)</span><b>$75/hr</b></li>
+          <li><span>New workstation setup (each)</span><b>$99</b></li>
+          <li><span>Printer / network device setup</span><b>$65</b></li>
+        </ul>
+      </div>
+      <div class="rate">
+        <div class="ex">Monthly Care Plan</div>
+        <ul>
+          <li><span>Up to 5 devices monitored</span><b>$149/mo</b></li>
+          <li><span>Priority same-day response</span><b>Included</b></li>
+          <li><span>Discounted on-site rate</span><b>$55/hr</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>How it works:</b> Call or email describing the issue → we give you a flat quote → you approve → we fix it. If we can't solve it, you don't pay. Prices are starting rates for standard jobs; anything unusual is quoted up front before work begins.
+    </div>
+
+    <div class="foot">
+      <span class="tag">WE HANDLE IT. YOU FOCUS ON WHAT MATTERS.</span>
+      <span class="rse"><b>Reliable</b> • <b>Secure</b> • <b>Efficient</b></span>
+    </div>
+  </div>
+</body>
+</html>
