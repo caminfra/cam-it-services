@@ -96,7 +96,7 @@ cam-it-services/
 │   │   ├── cg-mark.png               # CG slash mark (transparent)
 │   │   ├── camgotit-logo.png         # Full lockup (transparent)
 │   │   ├── camgotit-hero-logo.jpg    # Hero artwork
-│   │   ├── favicon.png / apple-touch-icon.png / icon-512.png
+│   │   ├── favicon-32/64/192.png (transparent) / apple-touch-icon.png / icon-512.png
 │   │   └── og-image.jpg              # Social share preview
 │   ├── cglogo.png / cglogo2.png      # Earlier logo versions
 │   └── screenshots/
