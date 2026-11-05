@@ -55,7 +55,7 @@ The site uses the CamGotIT **black / chrome / orange** brand and the CG slash lo
 
 ### Page sections
 
-Hero · trust bar · core services · Why choose CamGotIT (About) · How it works · service area (Pearl, Florence, Jackson, Richland) · Request a Quote form · footer
+Hero · trust bar · core services · Why choose CamGotIT (About) · How it works · service area (Jackson Metro Area) · Request a Quote form · footer
 
 ### Responsive design
 
