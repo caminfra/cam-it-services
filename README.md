@@ -41,54 +41,41 @@ Phase 1 focused on building and refining the public-facing CamGotIt IT Services 
 
 ## 🖥️ Website Features
 
-### IT Services
+Live site: **https://caminfra.github.io/cam-it-services/**
 
-The website currently highlights practical IT support services including:
+The site uses the CamGotIT **black / chrome / orange** brand and the CG slash logo.
 
-* **PC Optimization**
-  Improving computer performance by reducing unnecessary startup programs and software.
+### Core Services
 
-* **Security Setup**
-  Helping configure safer device settings, updates, browser security, and account protection.
+* **Computer Support** — troubleshooting, repairs, virus removal, and performance optimization
+* **Network & Wi-Fi** — setup, configuration, troubleshooting, and better coverage
+* **Device Setup** — computers, printers, phones, smart devices, and new equipment
+* **Security & Backup** — virus protection, data backup, and account security
+* **Software Support** — installation, updates, troubleshooting, and license management
 
-* **File Backup**
-  Helping protect important files, documents, and photos.
+### Page sections
 
-* **Remote Support**
-  Providing assistance with eligible software and configuration issues remotely.
+Hero · trust bar · core services · Why choose CamGotIT (About) · How it works · service area (Pearl, Florence, Jackson, Richland) · Request a Quote form · footer
 
-* **New Device Setup**
-  Setting up computers, software, printers, accounts, and essential settings.
+### Responsive design
 
-* **Pop-Up & Ad Cleanup**
-  Removing unwanted browser extensions, notifications, and unnecessary software.
+* Desktop, tablet, and phone layouts (tested at 1440px, 768px, and 375px)
+* Slide-in mobile menu with a Services submenu
+* Service cards become tappable list rows on phones
+* Sticky mobile **Get a Quote / Call** bar
+* Keyboard accessible, with skip link, visible focus states, and reduced-motion support
+
+### Quote form
+
+GitHub Pages is static hosting, so the quote form has no server. When someone submits the form, their email app opens with the request pre-filled and addressed to the CamGotIT inbox. The email address is set in `assets/js/main.js` (`CONTACT_EMAIL`). To receive submissions directly instead, point the form at a service such as Formspree.
 
 ---
 
 ## 🛠️ Technologies Used
 
-* HTML5
-* CSS3
-* JavaScript
-* GitHub
-* GitHub Pages
-
-Additional technologies and platforms will be incorporated as the CamGotIt project expands.
-
----
-
-## 📱 Responsive Design
-
-The website was designed to work across desktop and mobile devices.
-
-Responsive features include:
-
-* Mobile navigation menu
-* Responsive hero layout
-* Stacked mobile service cards
-* Mobile-friendly buttons
-* Responsive About section
-* Responsive contact information
+* HTML5, CSS3, and vanilla JavaScript (no build step)
+* Google Fonts (Montserrat, Inter, Michroma)
+* GitHub Pages (deployed from the `main` branch root)
 
 ---
 
@@ -96,16 +83,32 @@ Responsive features include:
 
 ```text
 cam-it-services/
-│
-├── index.html
-│
+├── index.html              # Business website (single page)
+├── 404.html                # Branded not-found page
+├── site.webmanifest        # App icon / home-screen metadata
+├── robots.txt
+├── sitemap.xml
+├── .nojekyll               # Serve files as-is (skip Jekyll)
 ├── assets/
-    |- cglogo.png
-    |
-│   └── cglogo2.png
-│
+│   ├── css/styles.css
+│   ├── js/main.js
+│   ├── img/
+│   │   ├── cg-mark.png               # CG slash mark (transparent)
+│   │   ├── camgotit-logo.png         # Full lockup (transparent)
+│   │   ├── camgotit-hero-logo.jpg    # Hero artwork
+│   │   ├── favicon.png / apple-touch-icon.png / icon-512.png
+│   │   └── og-image.jpg              # Social share preview
+│   ├── cglogo.png / cglogo2.png      # Earlier logo versions
+│   └── screenshots/
+├── docs/                   # Portfolio documentation
 └── README.md
 ```
+
+### Deploying
+
+Pages publishes from `main` at the repo root. Merge the website branch into `main`, and GitHub Pages rebuilds automatically within a minute or two.
+
+> If you move to a custom domain, add a `CNAME` file, update the canonical/OG URLs in `index.html`, `sitemap.xml`, and `robots.txt`, and change the `/cam-it-services/` paths in `404.html` to `/`.
 
 ---
 
