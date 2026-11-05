@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caminfra.github.io/cam-it-services/sitemap.xml
