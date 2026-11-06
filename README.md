@@ -41,7 +41,7 @@ Phase 1 focused on building and refining the public-facing CamGotIt IT Services 
 
 ## 🖥️ Website Features
 
-Live site: **https://caminfra.github.io/cam-it-services/**
+Live site: **https://camgotit.com/**
 
 The site uses the CamGotIT **black / chrome / orange** brand and the CG slash logo.
 
@@ -108,7 +108,7 @@ cam-it-services/
 
 Pages publishes from `main` at the repo root. Merge the website branch into `main`, and GitHub Pages rebuilds automatically within a minute or two.
 
-> If you move to a custom domain, add a `CNAME` file, update the canonical/OG URLs in `index.html`, `sitemap.xml`, and `robots.txt`, and change the `/cam-it-services/` paths in `404.html` to `/`.
+> The site uses the custom domain `camgotit.com` (set in `CNAME`). Absolute URLs in `index.html`, `sitemap.xml`, `robots.txt`, and `404.html` assume the site is served from the domain root.
 
 ---
 
