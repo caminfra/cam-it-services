@@ -67,7 +67,7 @@ Hero · trust bar · core services · Why choose CamGotIT (About) · How it work
 
 ### Quote form
 
-GitHub Pages is static hosting, so the quote form has no server. When someone submits the form, their email app opens with the request pre-filled and addressed to the CamGotIT inbox. The email address is set in `assets/js/main.js` (`CONTACT_EMAIL`). To receive submissions directly instead, point the form at a service such as Formspree.
+GitHub Pages is static hosting, so the quote form posts to **FormSubmit.co**, which forwards each request to `hello@camgotit.com` and then sends the visitor to `thanks.html`. FormSubmit has to be activated once: the first submission triggers a confirmation email to `hello@camgotit.com`, and nothing is delivered until you confirm it. FormSubmit keeps submissions for up to 30 days. A hidden `_honey` field catches spam bots.
 
 ---
 

@@ -550,3 +550,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .cta-row { grid-template-columns: 1fr; }
   .wordmark { font-size: 0.95rem; }
 }
+
+/* Client-ready V1 refinements */
+.section-lead { max-width: 660px; margin: -16px auto 32px; color: var(--muted); text-align: center; }
+.honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
+@media (max-width: 600px) {
+  .container { width: min(var(--container), 100% - 32px); }
+  .hero h1 { font-size: clamp(2rem, 9vw, 2.7rem); }
+  .hero .lead { font-size: 1rem; }
+  .cta-row .btn { width: 100%; }
+  .quote-form { padding: 18px; }
+  .service-card { min-width: 0; }
+  .city-pills li { font-size: .84rem; }
+}
