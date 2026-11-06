@@ -116,65 +116,16 @@
 
   // ---------- Quote form ----------
   var form = document.getElementById('quote-form');
-  var status = document.getElementById('form-status');
   var serviceSelect = document.getElementById('f-service');
-
-  // Clicking a service card pre-selects it in the form
   document.querySelectorAll('.service-card[data-service]').forEach(function (card) {
     card.addEventListener('click', function () {
       if (serviceSelect) serviceSelect.value = card.getAttribute('data-service');
     });
   });
-
+  // Browser-native validation and submission to third-party service.
   if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = form.elements.name;
-      var email = form.elements.email;
-      var message = form.elements.message;
-      var required = [name, email, message];
-      var firstBad = null;
-
-      required.forEach(function (input) {
-        var ok = input.value.trim() !== '' && input.checkValidity();
-        input.classList.toggle('invalid', !ok);
-        input.setAttribute('aria-invalid', String(!ok));
-        if (!ok && !firstBad) firstBad = input;
-      });
-
-      if (firstBad) {
-        status.textContent = firstBad === email && email.value.trim()
-          ? 'Please enter a valid email address.'
-          : 'Please fill in your name, email, and a short description.';
-        status.classList.add('error');
-        firstBad.focus();
-        return;
-      }
-
-      var service = form.elements.service.value || 'General IT help';
-      var phone = form.elements.phone.value.trim();
-      var subject = 'Quote request: ' + service + ' — ' + name.value.trim();
-      var body = [
-        'Name: ' + name.value.trim(),
-        'Email: ' + email.value.trim(),
-        'Phone: ' + (phone || 'Not provided'),
-        'Service needed: ' + service,
-        '',
-        message.value.trim()
-      ].join('\n');
-
-      status.classList.remove('error');
-      status.textContent = 'Opening your email app… If nothing opens, call or text (769) 208-7034.';
-      window.location.href = 'mailto:' + CONTACT_EMAIL +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-    });
-
-    form.addEventListener('input', function (e) {
-      if (e.target.classList.contains('invalid') && e.target.value.trim()) {
-        e.target.classList.remove('invalid');
-        e.target.removeAttribute('aria-invalid');
-      }
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) { event.preventDefault(); form.reportValidity(); }
     });
   }
 })();
