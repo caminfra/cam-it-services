@@ -108,6 +108,8 @@ cam-it-services/
 
 Pages publishes from `main` at the repo root. Merge the website branch into `main`, and GitHub Pages rebuilds automatically within a minute or two.
 
+When you change `styles.css` or `main.js`, bump the `?v=` number on their links in `index.html` so browsers fetch the new file instead of a cached copy.
+
 > The site uses the custom domain `camgotit.com` (set in `CNAME`). Absolute URLs in `index.html`, `sitemap.xml`, `robots.txt`, and `404.html` assume the site is served from the domain root.
 
 ---
