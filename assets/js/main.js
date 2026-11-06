@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var CONTACT_EMAIL = 'csims4039@gmail.com';
+  var CONTACT_EMAIL = 'hello@camgotit.com';
 
   // Footer year
   var year = document.getElementById('year');
