@@ -67,7 +67,7 @@ Hero · trust bar · core services · Why choose CamGotIT (About) · How it work
 
 ### Quote form
 
-GitHub Pages is static hosting, so the quote form posts to **FormSubmit.co**, which forwards each request to `hello@camgotit.com` and then sends the visitor to `thanks.html`. FormSubmit has to be activated once: the first submission triggers a confirmation email to `hello@camgotit.com`, and nothing is delivered until you confirm it. FormSubmit keeps submissions for up to 30 days. A hidden `_honey` field catches spam bots.
+GitHub Pages is static hosting, so the quote form posts to **Web3Forms**, which emails each request to the address linked to the form's access key (`hello@camgotit.com`) and then sends the visitor to `thanks.html`. The access key is the `access_key` field in `index.html`; Web3Forms designs it to be public, so it is safe in the page source. A hidden `botcheck` field catches simple spam bots. The customer's address becomes the email's Reply-To, so you can reply directly.
 
 ---
 
