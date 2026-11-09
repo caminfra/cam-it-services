@@ -8,7 +8,13 @@
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // ---------- Grand opening offer: remove it once it has ended ----------
+  document.querySelectorAll('[data-promo-ends]').forEach(function (el) {
+    if (Date.now() >= Date.parse(el.getAttribute('data-promo-ends'))) el.remove();
+  });
+
   // ---------- Mobile navigation ----------
+  var header = document.querySelector('.site-header');
   var burger = document.querySelector('.nav-burger');
   var nav = document.getElementById('primary-nav');
   var menuItem = document.querySelector('.has-menu');
@@ -18,6 +24,8 @@
     if (!burger || !nav) return;
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    // The launch banner can push the header down, so open the menu just below it
+    nav.style.top = open ? header.getBoundingClientRect().bottom + 'px' : '';
     nav.classList.toggle('open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   }
@@ -122,6 +130,20 @@
       if (serviceSelect) serviceSelect.value = card.getAttribute('data-service');
     });
   });
+  // City or ZIP is required for in-home visits, to check travel before quoting
+  var typeSelect = document.getElementById('f-type');
+  var cityInput = document.getElementById('f-city');
+  var cityMark = document.getElementById('f-city-mark');
+  if (typeSelect && cityInput && cityMark) {
+    var syncCity = function () {
+      var inHome = typeSelect.value === 'In-Home';
+      cityInput.required = inHome;
+      cityMark.hidden = !inHome;
+    };
+    typeSelect.addEventListener('change', syncCity);
+    syncCity();
+  }
+
   // Browser-native validation and submission to third-party service.
   if (form) {
     form.addEventListener('submit', function (event) {
