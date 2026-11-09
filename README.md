@@ -47,21 +47,24 @@ The site uses the CamGotIT **black / chrome / orange** brand and the CG slash lo
 
 ### Core Services
 
-* **Computer Support** — troubleshooting, repairs, virus removal, and performance optimization
-* **Network & Wi-Fi** — setup, configuration, troubleshooting, and better coverage
-* **Device Setup** — computers, printers, phones, smart devices, and new equipment
-* **Security & Backup** — virus protection, data backup, and account security
-* **Software Support** — installation, updates, troubleshooting, and license management
+* **Software Support** — remote $35, in-home $59
+* **Printer / Device Connection** — remote $39, in-home $59
+* **Computer Support** — remote $49, in-home $59
+* **Security & Backup** — remote $49, in-home $59
+* **Network & Wi-Fi** — in-home $59
+* **New Computer Setup** — in-home $99
 
 ### Page sections
 
-Hero · trust bar · core services · Why choose CamGotIT (About) · How it works · service area (Jackson Metro Area) · Request a Quote form · footer
+Launch banner · hero · Remote and In-Home options · services with prices · pricing rules and grand opening offer · Why choose CamGotIT (About) · How it works · service area · Request a Free Quote form · footer
+
+The grand opening banner and offer carry a `data-promo-ends` date, and `assets/js/main.js` removes them automatically once it passes.
 
 ### Responsive design
 
 * Desktop, tablet, and phone layouts (tested at 1440px, 768px, and 375px)
 * Slide-in mobile menu with a Services submenu
-* Service cards become tappable list rows on phones
+* Service cards stack in one column on phones
 * Sticky mobile **Get a Quote / Call** bar
 * Keyboard accessible, with skip link, visible focus states, and reduced-motion support
 
